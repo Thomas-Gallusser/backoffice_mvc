@@ -49,7 +49,33 @@ class Work {
     }
   }
 
-  function create() {
+  //Accesseurs
+  public function getNom() {
+    return $this->nom;
+  }
+
+  public function getArticle() {
+    return $this->article;
+  }
+
+  public function getGroupe() {
+    return $this->groupe;
+  }
+
+  public function getType() {
+    return $this->type;
+  }
+
+  public function getLikes() {
+    return $this->likes;
+  }
+
+  public function getImage() {
+    return $this->image;
+  }
+
+
+  public function create() {
     $db = Database::getInstance();
     $sql = 'INSERT INTO works (nom, groupe, type, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->groupe.'", "'.$this->type.'", "'.$this->likes.'", "'.$this->image.'","'.$this->article.'");';
     $db->exec($sql);
@@ -58,6 +84,3 @@ class Work {
 
 
 }
-
-
-?>

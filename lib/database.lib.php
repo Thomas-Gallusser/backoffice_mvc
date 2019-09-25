@@ -10,7 +10,7 @@ class Database {
             $this->db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PWD);
         } catch(Exception $e) {
             echo 'Erreur connexion DB : '.$e->getMessage().'<br />';
-	          echo 'N� : '.$e->getCode();
+			      echo 'N° : '.$e->getCode();
         }
     }
 
