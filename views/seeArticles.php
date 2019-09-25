@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+$allArticles = Work::getAll();
+?>
 
 <div class="h5 py-4 text-center font-weight-bold">Liste de tous les articles</div>
 
@@ -13,16 +16,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Titre test</td>
-      <td>Groupe test</td>
-      <td>Type test</td>
-      <td>10</td>
-      <td>
-        <a href="index.php?backoffice=1&type=1&edit=1&id=ID_ARTICLE"><i class="fas fa-edit" title="Modifier"></i></a>
-        <a href="deleteArticle.php?id=ID_ARTICLE" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
-      </td>
-    </tr>
+    <?php
+    foreach($allArticles as $article){
+      echo '<tr>
+        <td>'.$article->getNom().'</td>
+        <td>'.$article->getGroupe().'</td>
+        <td>'.$article->getType().'</td>
+        <td>'.$article->getLikes().'</td>
+        <td>
+          <a href="index.php?backoffice=1&type=1&edit=1&id='.$article->getId().'"><i class="fas fa-edit" title="Modifier"></i></a>
+          <a href="deleteArticle.php?id='.$article->getId().'" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
+        </td>
+      </tr>';
+    }
+    ?>
   </tbody>
 </table>
 

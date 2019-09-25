@@ -1,12 +1,14 @@
 <?php ob_start();
 
-if(isset($_GET['id'])){
-  $article = new Work($_GET['id']);
+if(isset($_GET['id']) && is_numeric($_GET['id'])){
+  $article = Work::withId($_GET['id']);
 ?>
 
 <div class="h5 py-4 text-center font-weight-bold">Modifier l'article</div>
 
 <form action="controllers/modifyArticle.php" method="POST" class="workForm">
+  <input type="hidden" name="id" value="<?= $article->getId(); ?>" />
+
   <div class="form-group">
     <label for="exampleFormControlInput1" class="font-weight-bold">Titre de l'article</label>
     <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="titre*" required value="<?= $article->getNom(); ?>">
