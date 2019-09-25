@@ -7,18 +7,17 @@
 
   if (!empty($_POST['title']) && !empty($_POST['commentary']) && !empty($_POST['groupe']) && !empty($_POST['type']) && !empty($_FILES['img'])) {
 
-    $file = $_FILES["img"];
-    if (strpos($file["type"], 'image/') !== false){
-      $imgId = uniqid("upld_") . '.' . pathinfo($file["name"],PATHINFO_EXTENSION);
-      move_uploaded_file($file['tmp_name'], '../img/' . $imgId);
+    $file = $_FILES['img'];
+    $img_blob= file_get_contents($file["tmp_name"]);
 
+    if (strpos($file["type"], 'image/') !== false){
       $instArticle = [
           "id" => 0,
           "nom" => $_POST['title'],
           "groupe" => $_POST['groupe'],
           "type" => $_POST['type'],
           "likes" => 0,
-          "image" => $imgId,
+          "image" => addslashes($img_blob),
           "article" => $_POST['commentary']
       ];
 

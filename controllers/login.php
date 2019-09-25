@@ -11,7 +11,6 @@ if(isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['pwd']) && 
   require('../lib/database.lib.php');
   require('../conf/settings.php');
   $conn = Database::getInstance();
-
   // Get login informations for the specific User
   $row = $conn->prep_exec('SELECT id, password
                           FROM users
