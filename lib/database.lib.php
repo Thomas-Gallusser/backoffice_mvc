@@ -26,8 +26,17 @@ class Database {
 		return self::$instance;
 	}
 
-  public function prepare($sql) {
-    return $this->db->prepare($sql);
+  public function prep_exec($sql) {
+    $prepared = $this->db->prepare($sql);
+    $prepared->execute();
+    $result = $prepared->fetch(PDO::FETCH_ASSOC);
+    return $result;
+  }
+
+  public function fetch_prepared($array) {
+    $state = $this->db->execute($array);
+    if ($state) return $state->fetchAll();
+    return false;
   }
 
 	/* Requ�te de retour */
