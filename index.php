@@ -4,8 +4,12 @@ require('views/header.php');
 
 if(isset($_GET['page']))
   require('views/base.php');
-elseif(isset($_GET['admin']))
-  require('views/admin.php');
+elseif(isset($_GET['admin'])){
+  if(!isset($_SESSION['admin']))
+    require('views/admin.php');
+  else
+    header("Location: index.php?backoffice=1");
+}
 elseif(isset($_GET['backoffice'])){
   if(isset($_SESSION['admin'])){
 
@@ -16,14 +20,18 @@ elseif(isset($_GET['backoffice'])){
     //   TYPE = 1 : Article                            //
     //   SEE = 1 : See an article                      //
     //   ADD = 1 : Add an article                      //
-    //   MODIFY = 1 : Modify an article                //
-    //   DELETE = 1 : Delete an article                //
+    //   EDIT = 1 : Modify an article                //
     /////////////////////////////////////////////////////
 
     // Content
     if(isset($_GET['type'])){
       if($_GET['type'] == 1){
-        require('views/workForm.php');
+        if(isset($_GET['see']))
+          require('views/workForm.php');
+        elseif(isset($_GET['add']))
+          require('views/seeArticles.php');
+        elseif(isset($_GET['edit']))
+          require('views/modifyArticle.php');
       }
     }
 
