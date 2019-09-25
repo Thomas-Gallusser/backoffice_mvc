@@ -25,7 +25,7 @@ $allArticles = Work::getAll();
         <td>'.$article->getLikes().'</td>
         <td>
           <a href="index.php?backoffice=1&type=1&edit=1&id='.$article->getId().'"><i class="fas fa-edit" title="Modifier"></i></a>
-          <a href="deleteArticle.php?id='.$article->getId().'" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
+          <a href="controllers/deleteArticle.php?id='.$article->getId().'" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
         </td>
       </tr>';
     }

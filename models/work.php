@@ -87,6 +87,13 @@ class Work {
     $db->exec($sql);
   }
 
+  //Modification d'une entité dans la base de données
+  public function edit() {
+    $db = Database::getInstance();
+    $sql = 'UPDATE works SET nom="'.$this->nom.'",groupe="'.$this->groupe.'",type="'.$this->type.'",likes='.$this->likes.',image="'.$this->image.'",article="'.$this->article.'" WHERE id='.$this->id.';';
+    $db->exec($sql);
+  }
+
   //récupère tous les articles et les renvoie dans un tableau
   static function getAll(){
     $db = Database::getInstance();

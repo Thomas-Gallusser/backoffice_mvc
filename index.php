@@ -20,7 +20,7 @@ elseif(isset($_GET['backoffice'])){
     //   TYPE = 1 : Article                            //
     //   SEE = 1 : See an article                      //
     //   ADD = 1 : Add an article                      //
-    //   EDIT = 1 : Modify an article                //
+    //   EDIT = 1 : Modify an article                  //
     /////////////////////////////////////////////////////
 
     // Content

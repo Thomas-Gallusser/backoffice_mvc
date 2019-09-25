@@ -24,15 +24,10 @@
       $newArticle = Work::withData($instArticle);
       $newArticle->create();
 
-      unlink($file['tmp_name']);
-
       header('Location: ../index.php?admin');
       exit();
     }
   }
-
-
-  if (strpos($file["type"], 'image/') !== false) unlink($file['tmp_name']);
 
  $_SESSION['title'] = $_POST['title'];
  $_SESSION['groupe'] = $_POST['groupe'];
