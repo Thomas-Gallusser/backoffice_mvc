@@ -8,16 +8,14 @@ if(isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['pwd']) && 
   $sel2 = "i59);";
 
   // Db connect
-  require('../models/db.php');
-  $conn = getBdd();
+  require('../lib/database.lib.php');
+  require('../conf/settings.php');
+  $conn = Database::getInstance();
 
   // Get login informations for the specific User
-  $stmt = $conn->prepare('SELECT id, password
+  $row = $conn->prep_exec('SELECT id, password
                           FROM users
-                          WHERE login = "'.$_POST['login'].'"');
-  $stmt->execute();
-
-  $row = $stmt->fetch();
+                          WHERE login = "'.$login.'" ;');
 
   // Verification of password with db
   if($row['password'] == hash("sha256",$sel1.$_POST['pwd'].$sel2)){
@@ -26,6 +24,7 @@ if(isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['pwd']) && 
     header("Location: ../index.php?backoffice=1");
   }
   else{
+    var_dump($row);
     header("Location: ../index.php?admin=1&error=1");
   }
 }
