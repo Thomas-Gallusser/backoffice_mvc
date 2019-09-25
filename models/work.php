@@ -14,25 +14,31 @@ class Work {
   //Constructueur
   //*Instanciation d'un object existant avec new Work (id)
   //*Création d'un nouvel objet avec new Work (nom, groupe, type, likes, image, article)
-  public function __construct($id = '',
-                              $nom = '',
-                              $groupe = '',
-                              $type = '',
-                              $likes= '',
-                              $image = '',
-                              $article = '') {
-    if ($id != ''){
-      $this->id = $id;
-      $this->load();
-    }
-    else {
-      $this->nom      = $nom;
-      $this->groupe   = $groupe;
-      $this->type     = $type;
-      $this->likes    = $likes;
-      $this->image    = $image;
-      $this->article  = $article;
-    }
+  public function __construct() {
+
+  }
+
+  static function withData( $array ) {
+    $instance = new self();
+    $instance->fill($array);
+    return $instance;
+  }
+
+  static function withId($id) {
+    $instance = new self();
+    $instance->id = $id;
+    $instance->load();
+    return $instance;
+  }
+
+  public function fill( $array ) {
+    $this->id       = $array['id'];
+    $this->nom      = $array['nom'];
+    $this->groupe   = $array['groupe'];
+    $this->type     = $array['type'];
+    $this->likes    = $array['likes'];
+    $this->image    = $array['image'];
+    $this->article  = $array['article'];
   }
 
   public function load() {
@@ -40,12 +46,7 @@ class Work {
       $db = Database::getInstance();
       $sql = 'SELECT * FROM works WHERE id="'.$this->id.'"';
       if ($result = $db->fetch($sql)) {
-        $this->nom      = $result [0]["nom"];
-        $this->groupe   = $result [0]["groupe"];
-        $this->type     = $result [0]["type"];
-        $this->likes    = $result [0]["likes"];
-        $this->image    = $result [0]["image"];
-        $this->article  = $result [0]["article"];
+        $this->fill($result[0]);
       }
     }
   }
@@ -85,22 +86,24 @@ class Work {
   //récupère tous les articles et les renvoie dans un tableau
   static function getAll(){
     $db = Database::getInstance();
-    $sql = 'SELECT id FROM works';
+    $sql = 'SELECT * FROM works';
     $works = array();
     foreach ($db->fetch($sql) as $work) {
-      array_push($work, new Work($work['id']));
+      array_push($work, Work::withData($work));
     }
     return $works;
   }
 
-  //Récupère les $n derniers articles et les renvoie dans un tableau
+  //Récupère les $n derniers articles et les renvoie
   static function getLast($n) {
     $db = Database::getInstance();
-    $sql = 'SELECT id FROM works ORDER BY id DESC LIMIT '.$n.';';
+    $sql = 'SELECT * FROM works ORDER BY id DESC LIMIT '.$n.';';
     $works = array();
     foreach($db->fetch($sql) as $work) {
-      array_push($work, new Work($work['id']));
+      array_push($work, Work::WithData($work));
     }
   }
 
 }
+
+// var_dump(Work::WithId(1));
