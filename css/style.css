@@ -178,7 +178,7 @@ button.bg-light-blue:hover{
   bottom: 60px;
   right: 30px;
   z-index: 99;
-  background-image:url('img/s_bg_icon_1.png');
+  background-image:url('../img/s_bg_icon_1.png');
   cursor: pointer;
   width:54px;
   height:54px;
@@ -280,7 +280,7 @@ input::placeholder, textarea::placeholder{
 }
 
 #header {
-  background-image: url(img/header_logo.png);
+  background-image: url('../img/header_logo.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -398,7 +398,7 @@ input::placeholder, textarea::placeholder{
   color:#00a99d;
 }
 .portfolio a:hover img{
-  content:url('img/backiconh.png');
+  content:url('../img/backiconh.png');
 }
 
 .pos{
