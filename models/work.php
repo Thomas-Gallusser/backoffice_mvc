@@ -104,6 +104,14 @@ class Work {
     }
   }
 
+  public function delete() {
+    if ($this->id) {
+      $db = Database::getInstance();
+      $sql = 'DELETE FROM works WHERE id = "'.$this->id.'"';
+      return $db->exec($sql);
+    }
+  }
+
 }
 
 // var_dump(Work::WithId(1));
