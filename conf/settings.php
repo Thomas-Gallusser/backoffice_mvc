@@ -4,8 +4,8 @@
  */
 define('DB_HOST', 'localhost');		// Le serveur MySQL de votre BDD : à modifier
 define('DB_NAME', 'startuprr');		// Votre base de donnàes : à modifier
-define('DB_USER', 'lauranne');		// Votre login : à modifier
-define('DB_PWD', 'laurd123');		// Votre mot de passe : à modifier
+define('DB_USER', 'root');		// Votre login : à modifier
+define('DB_PWD', '');		// Votre mot de passe : à modifier
 
 /*
  * Paths
