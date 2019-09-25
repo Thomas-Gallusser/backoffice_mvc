@@ -74,11 +74,26 @@ class Work {
     return $this->image;
   }
 
-
+  //Création d'une entité dans la base de données
   public function create() {
     $db = Database::getInstance();
-    $sql = 'INSERT INTO works (nom, groupe, type, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->groupe.'", "'.$this->type.'", "'.$this->likes.'", "'.$this->image.'","'.$this->article.'");'
+    $sql = 'INSERT INTO works (nom, groupe, type, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->groupe.'", "'.$this->type.'", "'.$this->likes.'", "'.$this->image.'","'.$this->article.'");';
     $db->exec($sql);
+  }
+
+  static function getAll(){
+    $db = Database::getInstance();
+    $sql = 'SELECT id FROM works';
+    $works = array();
+    foreach ($db->fetch($sql) as $work) {
+      array_push($work, new Work($work['id']));
+    }
+    return $works;
+  }
+
+  static function getLast($n) {
+    $db = Database::getInstance();
+    // $sql = 'SELECT id FROM works ORDER BY '
   }
 
 
