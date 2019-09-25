@@ -24,9 +24,16 @@
     <textarea class="form-control" name="commentary" id="exampleFormControlTextarea1" required><?php if(!empty($_SESSION['commentary'])) echo $_SESSION['commentary']; ?></textarea>
   </div>
   <hr class="my-3" />
-  <div class="form-group">
-    <label for="exampleFormControlFile1" class="font-weight-bold">Image</label>
-    <input type="file" name="img" class="form-control-file">
+  <div class="row">
+    <div class="col-4">
+      <img id="preview" alt="Insérer une image" />
+    </div>
+    <div class="col-8">
+      <div class="form-group">
+        <label for="exampleFormControlFile1" class="font-weight-bold">Image</label>
+        <input type="file" name="img" class="form-control-file" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])">
+      </div>
+    </div>
   </div>
   <hr class="my-3" />
   <div class="form-group">

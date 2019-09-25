@@ -52,6 +52,10 @@ class Work {
   }
 
   //Accesseurs
+  public function getId() {
+    return $this->id;
+  }
+
   public function getNom() {
     return $this->nom;
   }
@@ -89,7 +93,7 @@ class Work {
     $sql = 'SELECT * FROM works';
     $works = array();
     foreach ($db->fetch($sql) as $work) {
-      array_push($work, Work::withData($work));
+      array_push($works, Work::withData($work));
     }
     return $works;
   }
@@ -100,7 +104,15 @@ class Work {
     $sql = 'SELECT * FROM works ORDER BY id DESC LIMIT '.$n.';';
     $works = array();
     foreach($db->fetch($sql) as $work) {
-      array_push($work, Work::WithData($work));
+      array_push($works, Work::WithData($work));
+    }
+  }
+
+  public function delete() {
+    if ($this->id) {
+      $db = Database::getInstance();
+      $sql = 'DELETE FROM works WHERE id = "'.$this->id.'"';
+      return $db->exec($sql);
     }
   }
 
