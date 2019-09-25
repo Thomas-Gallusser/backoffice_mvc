@@ -26,6 +26,10 @@ class Database {
 		return self::$instance;
 	}
 
+  public function prepare($sql) {
+    return $this->db->prepare($sql);
+  }
+
 	/* Requ�te de retour */
 	public function fetch($sql) {
 		$state = $this->db->query($sql);
