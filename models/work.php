@@ -82,6 +82,7 @@ class Work {
     $db->exec($sql);
   }
 
+  //récupère tous les articles et les renvoie dans un tableau
   static function getAll(){
     $db = Database::getInstance();
     $sql = 'SELECT id FROM works';
@@ -92,11 +93,14 @@ class Work {
     return $works;
   }
 
+  //Récupère les $n derniers articles et les renvoie dans un tableau
   static function getLast($n) {
     $db = Database::getInstance();
-    // $sql = 'SELECT id FROM works ORDER BY '
+    $sql = 'SELECT id FROM works ORDER BY id DESC LIMIT '.$n.';';
+    $works = array();
+    foreach($db->fetch($sql) as $work) {
+      array_push($work, new Work($work['id']));
+    }
   }
-
-
 
 }
