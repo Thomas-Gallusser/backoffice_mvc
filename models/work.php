@@ -16,6 +16,7 @@ class Work {
   //*Création d'un nouvel objet avec new Work (nom, groupe, type, likes, image, article)
   public function __construct($id = '',
                               $nom = '',
+                              $groupe = '',
                               $type = '',
                               $likes= '',
                               $image = '',

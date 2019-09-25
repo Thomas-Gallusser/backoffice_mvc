@@ -351,16 +351,46 @@
           <p class="txt-light-grey">Let's take a loot at some of the best of our works here, we love them and hope you too</p>
               <div class="container-fluid">
                <div class="row">
-                 <?php
-                    $article = new Work(0);
-                    echo $article->getNom();
-                 ?>
-              </div>
-            </div><br/>
+
+
+                   <?php
+                     $article = new Work(1);
+
+                     echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 portfolio">
+                            <div class="container-fluid hov">
+                            <div class="row iconsPortf">
+                              <div class="pos test">
+                              <a href="#sample">
+                                <img src="img/backicon.png">
+                                <div class="centered fas fa-link"></div>
+                              </a>
+                              </div>
+                              <div class="pos search">
+                              <a href="#sample">
+                                <img src="img/backicon.png">
+                                <div class="centered fas fa-search"></div>
+                              </a>
+                              </div>
+                            </div>
+                            <div class="row infosPortf">
+                              <div class="col-12">
+                              <p class="bold">' . $article->getNom() . '</p>
+                              <p>' . $article->getGroupe() . ' / ' . $article->getType() . '</p>
+                              <p>♥ ' . $article->getLikes() . '</p>
+                              </div>
+                            </div>
+                            </div>
+                          </div>';
+                          
+                   ?>
+
+               </div>
+              </div><br/>
 
               <div>
                 <a href="#sample" id="viewAW">VIEW ALL WORKS</a>
               </div>
+            </div>
     </section>
 
     <!-- Section icon_3 -->
