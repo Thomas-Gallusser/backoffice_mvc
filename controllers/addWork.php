@@ -22,7 +22,7 @@
           "article" => $_POST['commentary']
       ];
 
-      $newArticle =Work::withData($instArticle);
+      $newArticle = Work::withData($instArticle);
       $newArticle->create();
 
       unlink($file['tmp_name']);
