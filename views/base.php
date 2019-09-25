@@ -352,7 +352,8 @@
               <div class="container-fluid">
                <div class="row">
                  <?php
-                  
+                    $article = new Work(0);
+                    echo $article->getNom();
                  ?>
               </div>
             </div><br/>
