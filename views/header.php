@@ -1,3 +1,8 @@
+<?php
+  require('conf/settings.php');
+  require('lib/database.lib.php');
+  require('models/work.php');
+?>
 <html lang="fr" dir="ltr">
 
 <head>
