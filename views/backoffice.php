@@ -1,9 +1,10 @@
-<?php session_start();
-
-if(isset($_SESSION['admin'])){
-  echo $_SESSION['admin'];
-  echo '<br />backoffice';
-}
-else {
-  header("Location: ../index.php?admin=1&error=1");
-}
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <?= $menu; ?>
+    </div>
+    <div class="col-9">
+      <?= (isset($content)?$content:''); ?>
+    </div>
+  </div>
+</div>
