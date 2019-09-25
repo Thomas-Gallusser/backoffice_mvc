@@ -355,6 +355,7 @@
 
                    <?php
                      $article = new Work(1);
+                     $article = Work::withId(1);
 
                      echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 portfolio">
                             <div class="container-fluid hov">
@@ -383,7 +384,7 @@
                                   <p>♥ ' . $article->getLikes() . '</p>
                                 </div>
                               </div>
-                              
+
                             </div>
                           </div>';
 
