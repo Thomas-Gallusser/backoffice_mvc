@@ -1,10 +1,4 @@
-<?php ob_start();
-
-try{ echo $_SESSION['title'] . '<br>'; } catch {}
-try{ echo $_SESSION['commentary'] . '<br>'; } catch {}
-try{ echo $_SESSION['groupe'] . '<br>'; } catch {}
-try{ echo $_SESSION['type'] . '<br>'; } catch {}
-?>
+<?php ob_start(); ?>
 
 <div class="h5 py-4 text-center font-weight-bold">Ajouter un article</div>
 
@@ -17,17 +11,17 @@ try{ echo $_SESSION['type'] . '<br>'; } catch {}
   <hr class="my-3" />
   <div class="form-group">
     <label for="exampleFormControlInput2" class="font-weight-bold">Groupe</label>
-    <input type="text" name="groupe" class="form-control" id="exampleFormControlInput2" placeholder="groupe*" required<?php if(!empty($_SESSION['groupe'])) echo 'value="'. $_SESSION['groupe'].'"'; ?>>
+    <input type="text" name="groupe" class="form-control" id="exampleFormControlInput2" placeholder="groupe*" required <?php if(!empty($_SESSION['groupe'])) echo 'value="'. $_SESSION['groupe'].'"'; ?>>
   </div>
   <hr class="my-3" />
   <div class="form-group">
     <label for="exampleFormControlInput3" class="font-weight-bold">Type</label>
-    <input type="text" name="type" class="form-control" id="exampleFormControlInput3" placeholder="type*" required<?php if(!empty($_SESSION['type'])) echo 'value="'. $_SESSION['type'].'"'; ?>>
+    <input type="text" name="type" class="form-control" id="exampleFormControlInput3" placeholder="type*" required <?php if(!empty($_SESSION['type'])) echo 'value="'. $_SESSION['type'].'"'; ?>>
   </div>
   <hr class="my-3" />
   <div class="form-group">
     <label for="exampleFormControlTextarea1" class="font-weight-bold">Texte</label>
-    <textarea class="form-control" name="commentary" id="exampleFormControlTextarea1" required<?php if(!empty($_SESSION['commentary'])) echo 'value="'. $_SESSION['commentary'].'"'; ?>></textarea>
+    <textarea class="form-control" name="commentary" id="exampleFormControlTextarea1" required><?php if(!empty($_SESSION['commentary'])) echo $_SESSION['commentary']; ?></textarea>
   </div>
   <hr class="my-3" />
   <div class="form-group">

@@ -12,7 +12,17 @@
       $imgId = uniqid("upld_") . '.' . pathinfo($file["name"],PATHINFO_EXTENSION);
       move_uploaded_file($file['tmp_name'], '../img/' . $imgId);
 
-      $newArticle = new Work(0, $_POST['title'], $_POST['groupe'], $_POST['type'], 0, $imgId, $_POST['commentary']);
+      $instArticle = [
+          "id" => 0,
+          "nom" => $_POST['title'],
+          "groupe" => $_POST['groupe'],
+          "type" => $_POST['type'],
+          "likes" => 0,
+          "image" => $imgId,
+          "article" => $_POST['commentary']
+      ];
+
+      $newArticle =Work::withData($instArticle);
       $newArticle->create();
 
       unlink($file['tmp_name']);
