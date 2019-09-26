@@ -2,6 +2,7 @@
   require('conf/settings.php');
   require('lib/database.lib.php');
   require('models/work.php');
+  require('models/user.php');
 ?>
 <html lang="fr" dir="ltr">
 

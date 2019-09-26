@@ -10,18 +10,21 @@ if(!empty($_POST['login']) && !empty($_POST['pwd'])){
   // Db connect
   require('../lib/database.lib.php');
   require('../conf/settings.php');
-  $conn = Database::getInstance();
-  // Get login informations for the specific User
-  $row = $conn->prep_exec('SELECT id, login, password, permission FROM users WHERE login = "'.$login.'" ;');
+  require('../models/user.php');
+  // $conn = Database::getInstance();
+  // // Get login informations for the specific User
+  // $row = $conn->prep_exec('SELECT id, login, password, permission FROM users WHERE login = "'.$login.'" ;');
 
+  $getUser = User::withLogin($login);
   // Verification of password with db
-  if($row['password'] == hash("sha256",$sel1.$_POST['pwd'].$sel2)){
-    $_SESSION['user'] = $row['login'];
+  if($getUser->getPassword() == hash("sha256",$sel1.$_POST['pwd'].$sel2)){
+    $_SESSION['user'] = $getUser->getLogin();
     $_SESSION['admin'] = 1;
-    $_SESSION['permission'] = $row['permission'];
-    header("Location: ../index.php?backoffice=1");
+    $_SESSION['permission'] = $getUser->getPermission();
+    header("Location: ../index.php?backoffice");
+    exit();
   } else {
     // var_dump($row);
-    header("Location: ../index.php?admin=1&error=1");
+    header("Location: ../index.php?admin&error");
   }
 }

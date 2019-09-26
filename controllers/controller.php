@@ -17,7 +17,7 @@ function getAdmin(){
   if(!isset($_SESSION['admin']))
     require('views/backoffice/admin.php');
   else
-    header("Location: index.php?backoffice=1");
+    header("Location: index.php?backoffice");
 }
 
 // backoffice
@@ -42,6 +42,8 @@ function getBackOffice(){
           require('views/backoffice/workForm.php');
         elseif(isset($_GET['edit']))
           require('views/backoffice/modifyArticle.php');
+        elseif(isset($_GET['new']))
+          require('views/backoffice/addUser.php');
       }
     }
 

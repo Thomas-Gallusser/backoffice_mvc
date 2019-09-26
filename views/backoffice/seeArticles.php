@@ -28,7 +28,7 @@ $allArticles = Work::getAll();
         <td><?= $article->getType(); ?></td>
         <td><?= $article->getLikes(); ?></td>
         <td>
-          <a href="index.php?backoffice=1&type=1&edit=1&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
+          <a href="index.php?>backoffice&type=1&edit=1&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
           <?php
           if($_SESSION['permission'] == 1){
             ?>
@@ -49,7 +49,7 @@ $allArticles = Work::getAll();
   $nbrArray = Work::getCntArticle() / 10;
   if ($nbrArray > 1) {
     for ($i = 1; $i < $nbrArray+1; $i++) {
-      echo '<a href="index.php?backoffice=1&type=1&see=1&p='.$i.'">'.$i.'</a>';
+      echo '<a href="index.php?>backoffice&type=1&see=1&p='.$i.'">'.$i.'</a>';
       if ($i <$nbrArray) echo ' - ';
     }
   }

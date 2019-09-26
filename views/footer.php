@@ -5,7 +5,8 @@
 <!-- Footer -->
 <footer id="footer">
   <section id="copyright" class="col-12">
-    <p>Copyright © 2014 Startuprr, All Rights Reserved.</p>
+    <a href="?admin" class="py-0" style="color:#00a99d;">Administration</a>
+    <p class="py-0">Copyright © 2014 Startuprr, All Rights Reserved.</p>
   </section>
 </footer>
 
