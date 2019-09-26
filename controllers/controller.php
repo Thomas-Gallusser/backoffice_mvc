@@ -1,5 +1,12 @@
 <?php
 
+function showHeader() {
+  if (isset($_GET['admin']) || isset($_GET['backoffice'])){
+    return false;
+  }
+  return true;
+}
+
 // Index
 function getPage(){
   require('views/base.php');

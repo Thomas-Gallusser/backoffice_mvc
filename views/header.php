@@ -17,3 +17,16 @@
 </head>
 
 <body>
+
+  <?php
+    if (!isset($_GET['p'])) $_GET['p'] = 1;
+    if (showHeader()) {
+  ?>
+  <header id="header">
+    <section id="logo" class="col-12 p-5">
+        <img src="img/header.png"/>
+    </section>
+  </header>
+  <?php
+  }
+  ?>

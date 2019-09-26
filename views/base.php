@@ -1,10 +1,4 @@
-<?php if (!isset($_GET['p'])) $_GET['p'] = 1; ?>
-  <!-- Header image -->
-  <header id="header">
-    <section id="logo" class="col-12 p-5">
-        <img src="img/header.png"/>
-    </section>
-  </header>
+
 
   <main>
     <!-- Menu -->
@@ -749,20 +743,3 @@
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer id="footer">
-    <section id="copyright" class="col-12">
-      <p>Copyright © 2014 Startuprr, All Rights Reserved.</p>
-    </section>
-  </footer>
-
-  <!-- Cookie bar -->
-  <div class="containerfluid bg-light-blue mediumText" id="cookieBar">
-    <div class="row">
-      <div class="col-9 col-sm-10 text-center font-weight-bold">En poursuivant votre navigation, vous acceptez le dépôt de cookies tiers afin de vous proposer des contenus et services adaptés à vos centres d'intérêts.</div>
-      <div class="col-3 col-sm-2 text-left">
-        <button class="btn bg-light btn-sm mt-2 font-weight-bold" onClick="acceptCookie()">Accepter</button>
-      </div>
-    </div>
-  </div>
