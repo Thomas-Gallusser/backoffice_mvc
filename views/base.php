@@ -29,7 +29,7 @@
     <!-- What we offer -->
     <section id="offer" class="pt-5">
       <div class="text-center">
-        <h1 class="h3"><img src="img/doubleLines.png" class="hideSmall" /> <img src="img/arrow.png" /> <b>WHAT WE <span class="titleBlue">OFFER</span></b> <img src="img/arrow.png" class="rotate180" /> <img src="img/doubleLines.png" class="rotate180 hideSmall" /></h1>
+        <h1 class="h3"><img src="img/doubleLines.png" class="hideSmall"> <img src="img/arrow.png"> <b>WHAT WE <span class="titleBlue">OFFER</span></b> <img src="img/arrow.png" class="rotate180"> <img src="img/doubleLines.png" class="rotate180 hideSmall"></h1>
         <p class="txt-light-grey">We offer our customers the best services & solutions, this is our main services list</p>
       </div>
 
@@ -67,15 +67,15 @@
 
     <!-- Section icon_1 -->
     <div class="section-nul text-center position-relative mt-5">
-      <img class="position-absolute" src="img/s_bg_icon_1.png" />
-      <img class="position-absolute" src="img/s_icon_1.png" />
+      <img class="position-absolute" src="img/s_bg_icon_1.png">
+      <img class="position-absolute" src="img/s_icon_1.png">
     </div>
 
     <!-- Amazing features -->
     <section id="feature" class="bg-dark-grey">
       <div class="container">
         <div class="text-center text-light py-5">
-          <h1 class="h3"><img src="img/arrow.png" /> <b>AMAZING <span class="titleBlue">FEATURES</span></b> <img src="img/arrow.png" class="rotate180" /></h1>
+          <h1 class="h3"><img src="img/arrow.png"> <b>AMAZING <span class="titleBlue">FEATURES</span></b> <img src="img/arrow.png" class="rotate180"></h1>
             <p class="txt-title-grey">With unlimited features that we offer, we promise it's possible to make eveything that was impossible for you !</p>
           </div>
 
@@ -85,7 +85,7 @@
                 <div class="col-12 col-xl-12 col-md-4">
                   <div class="row">
                     <div class="col-2 px-0 text-center">
-                      <img src="img/icon_g_1.png" />
+                      <img src="img/icon_g_1.png">
                     </div>
                     <div class="col-10">
                       <p class="font-weight-bold mb-0 text-white">RESPONSIVE & MULTIPURPOSE</p>
@@ -97,7 +97,7 @@
                 <div class="col-12 col-xl-12 col-md-4 m-top">
                   <div class="row">
                     <div class="col-2 px-0 text-center">
-                      <img src="img/icon_g_2.png" />
+                      <img src="img/icon_g_2.png">
                     </div>
                     <div class="col-10">
                       <p class="font-weight-bold mb-0 text-white">EASY CUSTOMIZATION</p>
@@ -109,7 +109,7 @@
                 <div class="col-12 col-xl-12 col-md-4 m-top">
                   <div class="row">
                     <div class="col-2 px-0 text-center">
-                      <img src="img/icon_g_3.png" />
+                      <img src="img/icon_g_3.png">
                     </div>
                     <div class="col-10">
                       <p class="font-weight-bold mb-0 text-white">UNLIMITED FEATURES</p>
@@ -121,7 +121,7 @@
             </div>
 
             <div class="col-8 hideSmall">
-              <img  src="img/ecran.png" />
+              <img  src="img/ecran.png">
             </div>
           </div>
         </div>
@@ -134,9 +134,9 @@
           <div class="col-12 col-sm-6 col-md-4 px-4 my-4" onmouseenter="overFeature(this)" onmouseleave="leaveFeature(this)">
             <div class="row">
               <div class="col-2 px-0 text-center img-element">
-                <img class="mt-4" src="img/bg_feature_2.png" />
-                <img class="img_feature_1" src="img/bg_feature_1.png" />
-                <img class="logo_feature" src="img/icon_1.png" />
+                <img class="mt-4" src="img/bg_feature_2.png">
+                <img class="img_feature_1" src="img/bg_feature_1.png">
+                <img class="logo_feature" src="img/icon_1.png">
               </div>
               <div class="col-10">
                 <p class="font-weight-bold mb-0 txt-title-grey">RESPONSIVE & MULTIPURPOSE</p>
@@ -149,9 +149,9 @@
           <div class="col-12 col-sm-6 col-md-4 px-4 my-4" onmouseenter="overFeature(this)" onmouseleave="leaveFeature(this)">
             <div class="row">
               <div class="col-2 px-0 text-center img-element">
-                <img class="mt-4" src="img/bg_feature_2.png" />
-                <img class="img_feature_1" src="img/bg_feature_1.png" />
-                <img class="logo_feature" src="img/icon_2.png" />
+                <img class="mt-4" src="img/bg_feature_2.png">
+                <img class="img_feature_1" src="img/bg_feature_1.png">
+                <img class="logo_feature" src="img/icon_2.png">
               </div>
               <div class="col-10">
                 <p class="font-weight-bold mb-0 txt-title-grey">EASY CUSTOMIZATION</p>
@@ -164,9 +164,9 @@
           <div class="col-12 col-sm-6 col-md-4 px-4 my-4" onmouseenter="overFeature(this)" onmouseleave="leaveFeature(this)">
             <div class="row">
               <div class="col-2 px-0 text-center img-element">
-                <img class="mt-4" src="img/bg_feature_2.png" />
-                <img class="img_feature_1" src="img/bg_feature_1.png" />
-                <img class="logo_feature" src="img/icon_4.png" />
+                <img class="mt-4" src="img/bg_feature_2.png">
+                <img class="img_feature_1" src="img/bg_feature_1.png">
+                <img class="logo_feature" src="img/icon_4.png">
               </div>
               <div class="col-10">
                 <p class="font-weight-bold mb-0 txt-title-grey">UNLIMITED FEATURES</p>
@@ -179,9 +179,9 @@
           <div class="col-12 col-sm-6 col-md-4 px-3 my-4" onmouseenter="overFeature(this)" onmouseleave="leaveFeature(this)">
             <div class="row">
               <div class="col-2 px-0 text-center img-element">
-                <img class="mt-4" src="img/bg_feature_2.png" />
-                <img class="img_feature_1" src="img/bg_feature_1.png" />
-                <img class="logo_feature" src="img/icon_5.png" />
+                <img class="mt-4" src="img/bg_feature_2.png">
+                <img class="img_feature_1" src="img/bg_feature_1.png">
+                <img class="logo_feature" src="img/icon_5.png">
               </div>
               <div class="col-10">
                 <p class="font-weight-bold mb-0 txt-title-grey">CLEAN & MODULAR CODING</p>
@@ -194,9 +194,9 @@
           <div class="col-12 col-sm-6 col-md-4 px-4 my-4" onmouseenter="overFeature(this)" onmouseleave="leaveFeature(this)">
             <div class="row">
               <div class="col-2 px-0 text-center img-element">
-                <img class="mt-4" src="img/bg_feature_2.png" />
-                <img class="img_feature_1" src="img/bg_feature_1.png" />
-                <img class="logo_feature" src="img/icon_6.png" />
+                <img class="mt-4" src="img/bg_feature_2.png">
+                <img class="img_feature_1" src="img/bg_feature_1.png">
+                <img class="logo_feature" src="img/icon_6.png">
               </div>
               <div class="col-10">
                 <p class="font-weight-bold mb-0 txt-title-grey">THE BEST E-COMMERCE SOLUTIONS</p>
@@ -209,9 +209,9 @@
           <div class="col-12 col-sm-6 col-md-4 px-4 my-4" onmouseenter="overFeature(this)" onmouseleave="leaveFeature(this)">
             <div class="row">
               <div class="col-2 px-0 text-center img-element">
-                <img class="mt-4" src="img/bg_feature_2.png" />
-                <img class="img_feature_1" src="img/bg_feature_1.png" />
-                <img class="logo_feature" src="img/icon_3.png" />
+                <img class="mt-4" src="img/bg_feature_2.png">
+                <img class="img_feature_1" src="img/bg_feature_1.png">
+                <img class="logo_feature" src="img/icon_3.png">
               </div>
               <div class="col-10">
                 <p class="font-weight-bold mb-0 txt-title-grey">AWESOME FRIENDLY SUPPORT</p>
@@ -226,14 +226,14 @@
 
     <!-- Section icon_2 -->
     <div class="section-nul text-center position-relative mt-4">
-      <img class="position-absolute" src="img/s_bg_icon_1.png" />
-      <img class="position-absolute" src="img/s_icon_2.png" />
+      <img class="position-absolute" src="img/s_bg_icon_1.png">
+      <img class="position-absolute" src="img/s_icon_2.png">
     </div>
 
     <!-- Skills -->
     <section id="skill" class="bg-dark-grey">
       <div class="text-center pt-5">
-        <h1 class="h3 text-light"><img src="img/arrow.png" /> <b>OUR POWERFUL <span class="titleBlue">SKILLS</span></b> <img src="img/arrow.png" class="rotate180" /></h1>
+        <h1 class="h3 text-light"><img src="img/arrow.png"> <b>OUR POWERFUL <span class="titleBlue">SKILLS</span></b> <img src="img/arrow.png" class="rotate180"></h1>
           <p class="txt-title-grey">With unlimited features that we offer, we promise it's possible to make eveything that was impossible for you !</p>
         </div>
 
@@ -341,7 +341,7 @@
     <!-- Samples -->
     <section id="sample">
       <div class="text-center py-5 col-12">
-        <p class="h3"><img src="img/doubleLines.png" class="hideSmall" /> <img src="img/arrow.png" /> <b>SAMPLE <span class="titleBlue">WORKS</span></b> <img src="img/arrow.png" class="rotate180" /> <img src="img/doubleLines.png" class="rotate180 hideSmall" /></p>
+        <p class="h3"><img src="img/doubleLines.png" class="hideSmall"> <img src="img/arrow.png"> <b>SAMPLE <span class="titleBlue">WORKS</span></b> <img src="img/arrow.png" class="rotate180"> <img src="img/doubleLines.png" class="rotate180 hideSmall"></p>
         <p class="txt-light-grey">Let's take a loot at some of the best of our works here, we love them and hope you too</p>
         <div class="container-fluid">
          <div class="row" id="view">
@@ -402,14 +402,14 @@
 
     <!-- Section icon_3 -->
     <div class="section-nul text-center position-relative">
-      <img class="position-absolute" src="img/s_bg_icon_1.png" />
-      <img class="position-absolute" src="img/s_icon_3.png" />
+      <img class="position-absolute" src="img/s_bg_icon_1.png">
+      <img class="position-absolute" src="img/s_icon_3.png">
     </div>
 
     <!-- Facts -->
     <section id="fact" class="bg-dark-grey">
       <div class="text-center pt-5">
-        <h1 class="h3 text-light"><img src="img/arrow.png" /> <b>COMPANY <span class="titleBlue">FACTS</span></b> <img src="img/arrow.png" class="rotate180" /></h1>
+        <h1 class="h3 text-light"><img src="img/arrow.png"> <b>COMPANY <span class="titleBlue">FACTS</span></b> <img src="img/arrow.png" class="rotate180"></h1>
         <p class="txt-title-grey">We do love to work and increase our counter numbers, this is what we've done till now</p>
       </div>
 
@@ -417,25 +417,25 @@
         <div class="row text-center txt-interval-grey">
           <div class="col-12 col-sm-6 col-lg-3 mb-5">
             <p class="mb-0"><span class="shape">&#9632;</span> <span data-value="218" class="largeTitle text-light countNumber">0</span> <span class="shape">&#9632;</span></p>
-            <p class="mb-2">—————&nbsp;&nbsp;&nbsp;<img src="img/facts_icon_1.png" />&nbsp;&nbsp;&nbsp;—————</p>
+            <p class="mb-2">—————&nbsp;&nbsp;&nbsp;<img src="img/facts_icon_1.png">&nbsp;&nbsp;&nbsp;—————</p>
             <p class="smallText font-weight-bold"><b>COMPLETED PROJECTS</b></p>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 mb-3">
             <p class="mb-0"><span class="shape">&#9632;</span> <span data-value="360" class="largeTitle text-light countNumber">0</span> <span class="shape">&#9632;</span></p>
-            <p class="mb-2">—————&nbsp;&nbsp;&nbsp;<img src="img/facts_icon_2.png" />&nbsp;&nbsp;&nbsp;—————</p>
+            <p class="mb-2">—————&nbsp;&nbsp;&nbsp;<img src="img/facts_icon_2.png">&nbsp;&nbsp;&nbsp;—————</p>
             <p class="smallText font-weight-bold"><b>HOURS OR WORK / MONTH</b></p>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 mb-3">
             <p class="mb-0"><span class="shape">&#9632;</span> <span data-value="135" class="largeTitle text-light countNumber">0</span> <span class="shape">&#9632;</span></p>
-            <p class="mb-2">—————&nbsp;&nbsp;&nbsp;<img src="img/facts_icon_1.png" />&nbsp;&nbsp;&nbsp;—————</p>
+            <p class="mb-2">—————&nbsp;&nbsp;&nbsp;<img src="img/facts_icon_1.png">&nbsp;&nbsp;&nbsp;—————</p>
             <p class="smallText font-weight-bold"><b>SOLVED TICKETS</b></p>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 mb-3">
             <p class="mb-0"><span class="shape">&#9632;</span> <span data-value="174" class="largeTitle text-light countNumber">0</span> <span class="shape">&#9632;</span></p>
-            <p class="mb-2">—————&nbsp;&nbsp;&nbsp;<img src="img/facts_icon_1.png" />&nbsp;&nbsp;&nbsp;—————</p>
+            <p class="mb-2">—————&nbsp;&nbsp;&nbsp;<img src="img/facts_icon_1.png">&nbsp;&nbsp;&nbsp;—————</p>
             <p class="smallText font-weight-bold"><b>SATISFIED CLIENTS</b></p>
           </div>
         </div>
@@ -460,7 +460,7 @@
     <!-- Members -->
     <section id="member" class="pt-5">
       <div class="text-center">
-        <h1 class="h3"><img src="img/doubleLines.png" class="hideSmall" /> <img src="img/arrow.png" /> <b><span class="titleBlue">TEAM</span> MEMBERS</b> <img src="img/arrow.png" class="rotate180" /> <img src="img/doubleLines.png" class="rotate180 hideSmall" /></h1>
+        <h1 class="h3"><img src="img/doubleLines.png" class="hideSmall"> <img src="img/arrow.png"> <b><span class="titleBlue">TEAM</span> MEMBERS</b> <img src="img/arrow.png" class="rotate180"> <img src="img/doubleLines.png" class="rotate180 hideSmall"></h1>
         <p class="txt-title-grey">We're some creative people with powerful knowledge & awesome skills behind the scene bringing you the bests</p>
       </div>
 
@@ -473,7 +473,7 @@
                 <button class="btn bg-light-blue text-light font-weight-bold mt-n3">ALEXIS SIMPSON</button>
               </div>
               <p class="mt-3 mb-0">CEO & Developer</p>
-              <hr />
+              <hr>
               <p class="txt-interval-grey mb-1 smallText">a.simpson@unique.com</p>
               <p class="txt-interval-grey mb-2 smallText">*1 911 (77) 222-1111</p>
             </div>
@@ -486,7 +486,7 @@
                 <button class="btn bg-light-blue text-light font-weight-bold mt-n3">STEVEN COLE</button>
               </div>
               <p class="mt-3 mb-0">User Interface Designer</p>
-              <hr />
+              <hr>
               <p class="txt-interval-grey mb-1 smallText">s.cole@unique.com</p>
               <p class="txt-interval-grey mb-2 smallText">*1 911 (77) 222-1111</p>
             </div>
@@ -499,7 +499,7 @@
                 <button class="btn bg-light-blue text-light font-weight-bold mt-n3">FRANK PIENER</button>
               </div>
               <p class="mt-3 mb-0">Sales Manager</p>
-              <hr />
+              <hr>
               <p class="txt-interval-grey mb-1 smallText">f.piener@unique.com</p>
               <p class="txt-interval-grey mb-2 smallText">*1 911 (77) 222-1111</p>
             </div>
@@ -512,7 +512,7 @@
                 <button class="btn bg-light-blue text-light font-weight-bold mt-n3">ASHLEY LENNON</button>
               </div>
               <p class="mt-3 mb-0">IT Specialist</p>
-              <hr />
+              <hr>
               <p class="txt-interval-grey mb-1 smallText">a.lennon@unique.com</p>
               <p class="txt-interval-grey mb-2 smallText">*1 911 (77) 222-1111</p>
             </div>
@@ -523,8 +523,8 @@
 
     <!-- Section icon_4 -->
     <div class="section-nul text-center position-relative mt-5">
-      <img class="position-absolute" src="img/s_bg_icon_2.png" />
-      <img class="position-absolute" src="img/s_icon_4.png" />
+      <img class="position-absolute" src="img/s_bg_icon_2.png">
+      <img class="position-absolute" src="img/s_icon_4.png">
     </div>
 
     <!-- Commentary -->
@@ -603,7 +603,7 @@
     <section id="price">
       <div class="container">
           <div class="text-center pt-5">
-            <h1 class="h3"><img src="img/doubleLines.png" class="hideSmall" /> <img src="img/arrow.png" /> <b>REAL CHEAP <span class="titleBlue">PRICES</span></b> <img src="img/arrow.png" class="rotate180" /> <img src="img/doubleLines.png" class="rotate180 hideSmall" /></h1>
+            <h1 class="h3"><img src="img/doubleLines.png" class="hideSmall"> <img src="img/arrow.png"> <b>REAL CHEAP <span class="titleBlue">PRICES</span></b> <img src="img/arrow.png" class="rotate180"> <img src="img/doubleLines.png" class="rotate180 hideSmall"></h1>
               <p class="txt-title-grey">We offer all our services in real low prices in comparaison with similar companies</p>
             </div>
 
@@ -614,13 +614,13 @@
                    <button type="button" class="btn bg-dark-grey text-light font-weight-bold mt-n3">STANDARD PLAN</button>
                  </div>
                  <p class="mt-2">$ <b class="priceSub">19.<span class="cents">99</span></b>Monthly</p>
-                 <hr />
+                 <hr>
                  <p>5 Projects</p>
                  <p>5 GB Storage</p>
                  <p>Unlimited Users</p>
                  <p>10 GB Bandwitch</p>
                  <p>Enhanced Security</p>
-                 <hr />
+                 <hr>
                  <div class="text-center mb-3">
                    <button type="button" class="btn bg-light-blue text-light font-weight-bold">SIGN UP NOW</button>
                  </div>
@@ -633,13 +633,13 @@
                    <button type="button" class="btn bg-light-blue text-light font-weight-bold mt-n3">PREMIUM PLAN</button>
                  </div>
                  <p class="mt-2">$ <b class="priceSub">29.<span class="cents">99</span></b>Monthly</p>
-                 <hr />
+                 <hr>
                  <p>10 Projects</p>
                  <p>15 GB Storage</p>
                  <p>Unlimited Users</p>
                  <p>20 GB Bandwitch</p>
                  <p>Enhanced Security</p>
-                 <hr />
+                 <hr>
                  <div class="text-center mb-3">
                    <button type="button" class="btn bg-light-blue text-light font-weight-bold">SIGN UP NOW</button>
                  </div>
@@ -649,16 +649,16 @@
              <div class="col-12 col-sm-6 col-lg-3 my-5">
                <div class="border rounded">
                  <div class="text-center">
-                   <button type="button" class="btn bg-dark-grey text-light font-weight-bold mt-n3"><img src="img/star.png" /> ADVANCED PLAN <img src="img/star.png" /> </button>
+                   <button type="button" class="btn bg-dark-grey text-light font-weight-bold mt-n3"><img src="img/star.png"> ADVANCED PLAN <img src="img/star.png"> </button>
                  </div>
                  <p class="mt-2">$ <b class="priceSub">49.<span class="cents">99</span></b>Monthly</p>
-                 <hr />
+                 <hr>
                  <p>15 Projects</p>
                  <p>30 GB Storage</p>
                  <p>Unlimited Users</p>
                  <p>50 GB Bandwitch</p>
                  <p>Enhanced Security</p>
-                 <hr />
+                 <hr>
                  <div class="text-center mb-3">
                    <button type="button" class="btn bg-light-blue text-light font-weight-bold">SIGN UP NOW</button>
                  </div>
@@ -671,13 +671,13 @@
                    <button type="button" class="btn bg-dark-grey text-light font-weight-bold mt-n3">ULTIMATE PLAN</button>
                  </div>
                  <p class="mt-2">$ <b class="priceSub">99.<span class="cents">99</span></b>Monthly</p>
-                 <hr />
+                 <hr>
                  <p>Unlimited Projects</p>
                  <p>Unlimited  Storage</p>
                  <p>Unlimited Users</p>
                  <p>Unlimited Bandwitch</p>
                  <p>Enhanced Security</p>
-                 <hr />
+                 <hr>
                  <div class="text-center mb-3">
                    <button type="button" class="btn bg-light-blue text-light font-weight-bold">SIGN UP NOW</button>
                  </div>
@@ -736,8 +736,8 @@
       </div>
 
       <div id="contactForm" class="position-absolute bg-light rounded p-3 border">
-        <div><input type="text" name="name" placeholder="Name" class="form-control rounded" /></div>
-        <div><input type="text" name="mail" placeholder="Email" class="form-control rounded mt-2" /></div>
+        <div><input type="text" name="name" placeholder="Name" class="form-control rounded"></div>
+        <div><input type="text" name="mail" placeholder="Email" class="form-control rounded mt-2"></div>
         <div><textarea name="message" placeholder="Message" class="form-control rounded noresize mt-2"></textarea></div>
         <div class="text-center"><button class="btn bg-light-blue rounded mt-2 font-weight-bold smallText w-100 text-light">SUBMIT MESSAGE</button></div>
       </div>

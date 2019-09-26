@@ -12,15 +12,10 @@ function getPage(){
   require('views/base.php');
 }
 
-// allArticles
-function getAllArticles(){
-  require('views/viewall.php');
-}
-
 // Admin
 function getAdmin(){
   if(!isset($_SESSION['admin']))
-    require('views/admin.php');
+    require('views/backoffice/admin.php');
   else
     header("Location: index.php?backoffice=1");
 }
@@ -29,7 +24,7 @@ function getAdmin(){
 function getBackOffice(){
   if(isset($_SESSION['admin'])){
     // Menu
-    require('views/menuBackOffice.php');
+    require('views/backoffice/menuBackOffice.php');
 
     //////////////////////////////////////////////////////
     //   TYPE = 1 : Article                            //
@@ -42,15 +37,15 @@ function getBackOffice(){
     if(isset($_GET['type'])){
       if($_GET['type'] == 1){
         if(isset($_GET['see']))
-          require('views/seeArticles.php');
+          require('views/backoffice/seeArticles.php');
         elseif(isset($_GET['add']))
-          require('views/workForm.php');
+          require('views/backoffice/workForm.php');
         elseif(isset($_GET['edit']))
-          require('views/modifyArticle.php');
+          require('views/backoffice/modifyArticle.php');
       }
     }
 
-    require('views/backoffice.php');
+    require('views/backoffice/backoffice.php');
   }
   else {
     header("Location: index.php?admin=1&error=1");

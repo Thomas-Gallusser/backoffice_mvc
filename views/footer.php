@@ -9,6 +9,7 @@
   </section>
 </footer>
 
+<?php if (!isset($_COOKIE['cookie'])) { ?>
 <!-- Cookie bar -->
 <div class="containerfluid bg-light-blue mediumText" id="cookieBar">
   <div class="row">
@@ -21,6 +22,7 @@
 
 <?php
   }
+}
 ?>
 
 <!-- Galery -->

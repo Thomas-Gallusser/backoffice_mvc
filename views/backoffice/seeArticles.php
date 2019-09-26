@@ -30,7 +30,7 @@ $allArticles = Work::getAll();
         <td>
           <a href="index.php?backoffice=1&type=1&edit=1&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
           <?php
-          if($_SESSION['permission'] > 0){
+          if($_SESSION['permission'] == 1){
             ?>
             <a href="controllers/deleteArticle.php?id=<?= $article->getId(); ?>&p=<?= $_GET['p']; ?>" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
             <?php

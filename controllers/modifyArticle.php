@@ -39,9 +39,11 @@ if(isset($_SESSION['admin'])){
     $newArticle->edit();
 
     header('Location: ../index.php?backoffice=1&type=1&see=1&p=1');
+    exit();
   }
 
   header('Location: ../index.php?backoffice=1&type=1&edit=1&id=' . $_POST['id']);
+  exit();
 }
 else {
   header("Location: index.php?admin=1&error=1");

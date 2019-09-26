@@ -15,6 +15,12 @@ $(document).ready(function(){
     });
 });
 
+/* Accept cookies */
+function acceptCookie(){
+  document.cookie = 'cookie=1';
+  document.getElementById('cookieBar').style.display = "none";
+}
+
 function viewPage(page) {
   var myView = document.getElementById('view');
 
@@ -167,11 +173,6 @@ window.onresize = function(event) {
     }
   }
 };
-
-/* Accept cookies */
-function acceptCookie(){
-  document.getElementById('cookieBar').style.display = "none";
-}
 
 /* Scroll top Button */
 mybutton = document.getElementById("myBtn");
