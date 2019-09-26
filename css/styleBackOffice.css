@@ -109,13 +109,21 @@
   height:300px;
 }
 #contentGalery .cImg{
-  border:solid 1px #ffffff;
-  border-radius:2px;
-  width:150px;
-  height:150px;
+  width:130px;
+  height:130px;
   display:inline-block;
+  margin:10px;
+  position:relative;
+}
+#contentGalery #checkIcon{
+  position:absolute;
+  top:-15px;
+  right:-15px;
+  width:30px;
+  height:30px;
+  color:#007bff;
 }
 #contentGalery img{
-  width:125px;
-  height:125px;
+  width:130px;
+  height:130px;
 }
