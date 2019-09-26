@@ -34,16 +34,24 @@ $allArticles = Work::getAll();
     $partArticle = Work::getPart(10,($_GET['p'] - 1) * 10);
 
     foreach($partArticle as $article){
-      echo '<tr>
-        <td>'.$article->getNom().'</td>
-        <td>'.$article->getGroupe().'</td>
-        <td>'.$article->getType().'</td>
-        <td>'.$article->getLikes().'</td>
+      ?>
+      <tr>
+        <td><?= $article->getNom(); ?></td>
+        <td><?= $article->getGroupe(); ?></td>
+        <td><?= $article->getType(); ?></td>
+        <td><?= $article->getLikes(); ?></td>
         <td>
-          <a href="index.php?backoffice=1&type=1&edit=1&id='.$article->getId().'"><i class="fas fa-edit" title="Modifier"></i></a>
-          <a href="controllers/deleteArticle.php?id='.$article->getId().'&p='.$_GET['p'].'" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
+          <a href="index.php?backoffice=1&type=1&edit=1&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
+          <?php
+          if($_SESSION['permission'] > 0){
+            ?>
+            <a href="controllers/deleteArticle.php?id=<?= $article->getId(); ?>&p=<?= $_GET['p']; ?>" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
+            <?php
+          }
+          ?>
         </td>
-      </tr>';
+      </tr>
+    <?php
     }
     ?>
   </tbody>
