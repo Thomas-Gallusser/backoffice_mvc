@@ -354,8 +354,9 @@
 
 
                    <?php
-                     $article = Work::withId(1);
+                     $articles = Work::getLast(12);
 
+                     foreach($articles as $article){
                      echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 portfolio">
                             <div class="container-fluid hov">
 
@@ -386,6 +387,7 @@
 
                             </div>
                           </div>';
+                        }
 
                    ?>
 

@@ -113,6 +113,7 @@ class Work {
     foreach($db->fetch($sql) as $work) {
       array_push($works, Work::WithData($work));
     }
+    return $works;
   }
 
   //Récupère les $n derniers articles et les renvoie
