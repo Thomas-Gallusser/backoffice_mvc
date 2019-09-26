@@ -26,7 +26,7 @@
   <hr class="my-3" />
   <div class="row">
 
-    <input type="hidden" id="imgFromGalery" value="" />
+    <input name="galery" type="hidden" id="imgFromGalery" value="" />
     <!-- Image chosen -->
     <div class="col-4 text-center">
       <img id="preview" src=""  />
@@ -54,15 +54,9 @@
 
 
 <?php
-unset($_SESSION['title']);
-unset($_SESSION['commentary']);
-unset($_SESSION['groupe']);
-unset($_SESSION['type']);
-$content = ob_get_clean(); ?>
 
+$content = ob_get_clean();
 
-
-<?php
 $tableImg = [];
 $handle = opendir('img/uploads/');
 while($file = readdir($handle)){
