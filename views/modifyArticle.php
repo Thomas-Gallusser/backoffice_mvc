@@ -35,7 +35,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
   </div>
   <hr class="my-3" />
   <div class="form-group">
-    <button class="form-control btn-primary">Ajouter l'article</button>
+    <button class="form-control btn-primary">Modifier l'article</button>
   </div>
 </form>
 

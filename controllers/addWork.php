@@ -30,6 +30,15 @@
     }
   }
 
+<<<<<<< HEAD
  header('Location: ../index.php?backoffice=1&type=1&see=1&atitle='. $_POST["title"] .'&agroupe='. $_POST["groupe"] .'&acommentary='. $_POST["commentary"] .'&atype='. $_POST["type"] .'');
+=======
+ $_SESSION['title'] = $_POST['title'];
+ $_SESSION['groupe'] = $_POST['groupe'];
+ $_SESSION['commentary'] = $_POST['commentary'];
+ $_SESSION['type'] = $_POST['type'];
+
+ header('Location: ../index.php?backoffice=1&type=1&add=1');
+>>>>>>> 60d584767829e70c78a9803fa1ac7d0c47cac00d
  exit();
 ?>
