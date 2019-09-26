@@ -30,7 +30,7 @@
     $newArticle = Work::withData($instArticle);
     $newArticle->edit();
 
-    header('Location: ../index.php?backoffice=1&type=1&add=1&nbr=1');
+    header('Location: ../index.php?backoffice=1&type=1&see=1&p=1');
     exit();
   }
 

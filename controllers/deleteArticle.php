@@ -7,5 +7,5 @@
 
   $delArticle = Work::withId($_GET['id']);
   $delArticle->delete();
-  header('Location: ../index.php?backoffice=1&type=1&add=1&nbr='.$_GET['nbr']);
+  header('Location: ../index.php?backoffice=1&type=1&see=1&p='.$_GET['p']);
 ?>

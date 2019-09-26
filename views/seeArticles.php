@@ -31,7 +31,7 @@ $allArticles = Work::getAll();
     // }
 
     // On récupère les articles, on récupère la page actuel on retire 1 et multiplie par 10 pour récupérer la bonne fourchette d'articles
-    $partArticle = Work::getPart(10,($_GET['nbr'] - 1) * 10);
+    $partArticle = Work::getPart(10,($_GET['p'] - 1) * 10);
 
     foreach($partArticle as $article){
       echo '<tr>
@@ -41,7 +41,7 @@ $allArticles = Work::getAll();
         <td>'.$article->getLikes().'</td>
         <td>
           <a href="index.php?backoffice=1&type=1&edit=1&id='.$article->getId().'"><i class="fas fa-edit" title="Modifier"></i></a>
-          <a href="controllers/deleteArticle.php?id='.$article->getId().'&nbr='.$_GET['nbr'].'" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
+          <a href="controllers/deleteArticle.php?id='.$article->getId().'&p='.$_GET['p'].'" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
         </td>
       </tr>';
     }
@@ -53,7 +53,7 @@ $allArticles = Work::getAll();
 
   $nbrArray = Work::getCntArticle() / 10;
   for ($i = 1; $i < $nbrArray; $i++) {
-    echo '<a href="index.php?backoffice=1&type=1&see=1?nbr='.$i.'">'.$i.'</a>';
+    echo '<a href="index.php?backoffice=1&type=1&see=1?p='.$i.'">'.$i.'</a>';
   }
 
   $content = ob_get_clean();
