@@ -350,7 +350,7 @@
 
             foreach($articles as $article){
             echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 portfolio" style="background-image: url(img/uploads/'.$article->getImage().');">
-                    <div class="col-12 portBac">
+                    <div class="col-12 portBack">
                      <div class="container-fluid hov">
 
                        <div class="row iconsPortf">
@@ -390,7 +390,7 @@
          <?php
 
           $nbrArray = Work::getCntArticle() / 12;
-          if ($nbrArray > 0) {
+          if ($nbrArray > 1) {
             for ($i = 1; $i < $nbrArray+1; $i++) {
               echo '<a href="#sample" onclick="viewPage('.$i.');">'.$i.'</a>';
               if ($i <$nbrArray) echo ' - ';
