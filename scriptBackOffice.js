@@ -51,9 +51,9 @@ $(document).ready(function() {
     }
 
     $('#paginGalery').append(pagination);
-  }
 
-  createImage(1);
+    createImage(1);
+  }
 });
 
 // Create page with table of images

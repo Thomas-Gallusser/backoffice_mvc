@@ -29,20 +29,20 @@
     <input type="hidden" id="imgFromGalery" value="" />
     <!-- Image chosen -->
     <div class="col-4 text-center">
-      <img id="preview" src=""  />
+      <img id="preview" src="img/default.jpg"  />
     </div>
     <!-- Galery to chose-->
     <div class="col-4">
-      <div id="linkGalery" class="w-75 h-100" onClick="toggleGalery()">
+      <div id="linkGalery" class="w-75 text-center rounded" onClick="toggleGalery()">
         Choisir depuis la galerie
       </div>
     </div>
     <!-- Direct upload image -->
     <div class="col-4">
-      <div class="form-group">
-        <label for="exampleFormControlFile1" class="font-weight-bold">Upload direct</label>
-        <input type="file" name="img" class="form-control-file" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])">
-      </div>
+      <label class="fileContainer rounded text-center">
+        Upload direct
+        <input type="file" name="img" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])" />
+      </label>
     </div>
   </div>
   <hr class="my-3" />
