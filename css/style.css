@@ -382,17 +382,24 @@ input::placeholder, textarea::placeholder{
 }
 
 .portfolio{
-  background-color:#8e8e8e;
-  border:0.5px solid white;
+  padding: 0px;
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
   height:200px;
   border-radius:5px;
 }
-.portfolio:hover{
-  background-color:#00a99d;
+.portBack{
+  height: 100%;
+  padding: 0px;
+  background-color: rgba(255,255,255,0);
+  border-radius:5px;
+}
+.portBack:hover{
+  background-color: rgba(255,255,255,0.7);
 }
 
 .portfolio a{
-  color:white;
+  color:black;
 }
 .portfolio a:hover{
   color:#00a99d;
@@ -404,7 +411,6 @@ input::placeholder, textarea::placeholder{
 .pos{
   position: relative;
   text-align: center;
-  color: white;
 }
 
 .centered{
@@ -422,7 +428,7 @@ input::placeholder, textarea::placeholder{
 }
 
 .infosPortf{
-  width:85%;
+  width:100%;
   top:50%;
   position: absolute;
 }
@@ -431,7 +437,7 @@ input::placeholder, textarea::placeholder{
 }
 .infosPortf p{
   margin-bottom:0px;
-  color:white;
+  color: black;
 }
 
 .search{
