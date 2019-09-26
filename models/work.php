@@ -115,6 +115,25 @@ class Work {
     }
   }
 
+  //Récupère les $n derniers articles et les renvoie
+  static function getPart($n,$o) {
+    $db = Database::getInstance();
+    $sql = 'SELECT * FROM works ORDER BY id LIMIT '.$n.' OFFSET '.$o.';';
+    $works = array();
+    foreach($db->fetch($sql) as $work) {
+      array_push($works, Work::WithData($work));
+    }
+    return $works;
+  }
+
+  //récupère tous les articles et les renvoie dans un tableau
+  static function getCntArticle(){
+    $db = Database::getInstance();
+    $sql = 'SELECT * FROM works';
+    $works = $db->fetch($sql);
+    return count($works);
+  }
+
   public function delete() {
     if ($this->id) {
       $db = Database::getInstance();

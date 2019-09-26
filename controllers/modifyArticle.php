@@ -7,14 +7,14 @@
 
   if (!empty($_POST['title']) && !empty($_POST['commentary']) && !empty($_POST['groupe']) && !empty($_POST['type'])) {
 
-    $getArticle = Work::withId($_SESSION['id']);
-    unset($_SESSION['id']);
+    $getArticle = Work::withId($_POST['id']);
 
     if (strpos($_FILES['img']["type"], 'image/') !== false) {
       $file = $_FILES['img'];
-      $img_blob= addslashes(file_get_contents($file["tmp_name"]));
+      $url = $file = $_FILE['img']['name'];
+      move_uploaded_file($file["tmp_name"]);
     } else {
-      $img_blob = addslashes($getArticle->getImage());
+      $url = $getArticle->getImage();
     }
 
     $instArticle = [
@@ -23,19 +23,17 @@
         "groupe" => $_POST['groupe'],
         "type" => $_POST['type'],
         "likes" => $getArticle->getLikes(),
-        "image" => $img_blob,
+        "image" => $url,
         "article" => $_POST['commentary']
     ];
 
     $newArticle = Work::withData($instArticle);
     $newArticle->edit();
 
-    header('Location: ../index.php?backoffice=1&type=1&add=1');
+    header('Location: ../index.php?backoffice=1&type=1&add=1&nbr=1');
     exit();
   }
 
-  $id = $_SESSION['id'];
-  unset($_SESSION['id']);
-  header('Location: ../index.php?backoffice=1&type=1&edit=1&id=' . $id);
+  header('Location: ../index.php?backoffice=1&type=1&edit=1&id=' . $_POST['id']);
   exit();
 ?>
