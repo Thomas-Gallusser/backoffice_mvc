@@ -5,6 +5,11 @@ function getPage(){
   require('views/base.php');
 }
 
+// allArticles
+function getAllArticles(){
+  require('views/viewall.php');
+}
+
 // Admin
 function getAdmin(){
   if(!isset($_SESSION['admin']))

@@ -63,8 +63,6 @@
   </div>
 </form>
 
-<<<<<<< HEAD
-
 
 <?php
 unset($_SESSION['title']);
@@ -89,6 +87,5 @@ $nbImg = count($tableImg);
 var tableImg = <?php echo json_encode($tableImg); ?>;
 var nbImg = tableImg.length;
 </script>
-=======
+
 <?php $content = ob_get_clean(); ?>
->>>>>>> 76e4ac46f103dd0592627af0dd7032cb7df1fc08
