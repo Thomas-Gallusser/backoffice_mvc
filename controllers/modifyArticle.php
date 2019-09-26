@@ -1,6 +1,6 @@
-<?php
-  session_start();
+<?php session_start();
 
+if(isset($_SESSION['admin'])){
   require('../conf/settings.php');
   require('../lib/database.lib.php');
   require('../models/work.php');
@@ -31,9 +31,11 @@
     $newArticle->edit();
 
     header('Location: ../index.php?backoffice=1&type=1&see=1&p=1');
-    exit();
   }
 
   header('Location: ../index.php?backoffice=1&type=1&edit=1&id=' . $_POST['id']);
-  exit();
+}
+else {
+  header("Location: index.php?admin=1&error=1");
+}
 ?>

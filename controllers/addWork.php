@@ -1,6 +1,6 @@
-<?php
-  session_start();
+<?php session_start();
 
+if(isset($_SESSION['admin'])){
   require('../conf/settings.php');
   require('../lib/database.lib.php');
   require('../models/work.php');
@@ -30,6 +30,9 @@
     }
   }
 
- header('Location: ../index.php?backoffice=1&type=1&add=1&atitle='. $_POST["title"] .'&agroupe='. $_POST["groupe"] .'&acommentary='. $_POST["commentary"] .'&atype='. $_POST["type"] .'');
- exit();
+  header('Location: ../index.php?backoffice=1&type=1&add=1&atitle='. $_POST["title"] .'&agroupe='. $_POST["groupe"] .'&acommentary='. $_POST["commentary"] .'&atype='. $_POST["type"] .'');
+}
+else {
+  header("Location: index.php?admin=1&error=1");
+}
 ?>
