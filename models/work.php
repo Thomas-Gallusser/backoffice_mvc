@@ -126,6 +126,16 @@ class Work {
     }
     return $works;
   }
+    //Récupère les $n derniers articles et les renvoie
+    static function getPartI($n,$o) {
+      $db = Database::getInstance();
+      $sql = 'SELECT * FROM works ORDER BY id DESC LIMIT '.$n.' OFFSET '.$o.';';
+      $works = array();
+      foreach($db->fetch($sql) as $work) {
+        array_push($works, Work::WithData($work));
+      }
+      return $works;
+    }
 
   //récupère tous les articles et les renvoie dans un tableau
   static function getCntArticle(){

@@ -1,4 +1,4 @@
-
+<?php if (!isset($_GET['p'])) $_GET['p'] = 1; ?>
   <!-- Header image -->
   <header id="header">
     <section id="logo" class="col-12 p-5">
@@ -348,57 +348,63 @@
     <section id="sample">
       <div class="text-center py-5 col-12">
         <p class="h3"><img src="img/doubleLines.png" class="hideSmall" /> <img src="img/arrow.png" /> <b>SAMPLE <span class="titleBlue">WORKS</span></b> <img src="img/arrow.png" class="rotate180" /> <img src="img/doubleLines.png" class="rotate180 hideSmall" /></p>
-          <p class="txt-light-grey">Let's take a loot at some of the best of our works here, we love them and hope you too</p>
-              <div class="container-fluid">
-               <div class="row">
+        <p class="txt-light-grey">Let's take a loot at some of the best of our works here, we love them and hope you too</p>
+        <div class="container-fluid">
+         <div class="row" id="view">
+           <?php
+            $articles = Work::getPartI(12,($_GET['p'] - 1) * 12);
 
+            foreach($articles as $article){
+            echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 portfolio">
+                   <div class="container-fluid hov">
 
-                   <?php
-                     $articles = Work::getLast(12);
+                     <div class="row iconsPortf">
+                       <div class="pos test">
+                         <a href="#sample">
+                           <img src="img/backicon.png">
+                           <div class="centered fas fa-link"></div>
+                         </a>
+                       </div>
 
-                     foreach($articles as $article){
-                     echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 portfolio">
-                            <div class="container-fluid hov">
+                       <div class="pos search">
+                         <a href="#sample">
+                           <img src="img/backicon.png">
+                           <div class="centered fas fa-search"></div>
+                         </a>
+                       </div>
 
-                              <div class="row iconsPortf">
-                                <div class="pos test">
-                                  <a href="#sample">
-                                    <img src="img/backicon.png">
-                                    <div class="centered fas fa-link"></div>
-                                  </a>
-                                </div>
+                     </div>
 
-                                <div class="pos search">
-                                  <a href="#sample">
-                                    <img src="img/backicon.png">
-                                    <div class="centered fas fa-search"></div>
-                                  </a>
-                                </div>
+                     <div class="row infosPortf">
+                       <div class="col-12">
+                         <p class="bold">' . $article->getNom() . '</p>
+                         <p>' . $article->getGroupe() . ' / ' . $article->getType() . '</p>
+                         <p>♥ ' . $article->getLikes() . '</p>
+                       </div>
+                     </div>
 
-                              </div>
+                   </div>
+                 </div>';
+               }
 
-                              <div class="row infosPortf">
-                                <div class="col-12">
-                                  <p class="bold">' . $article->getNom() . '</p>
-                                  <p>' . $article->getGroupe() . ' / ' . $article->getType() . '</p>
-                                  <p>♥ ' . $article->getLikes() . '</p>
-                                </div>
-                              </div>
+           ?>
 
-                            </div>
-                          </div>';
-                        }
+         </div>
+         <div>
+         <?php
 
-                   ?>
+          $nbrArray = Work::getCntArticle() / 12;
+          for ($i = 1; $i < $nbrArray+1; $i++) {
+            echo '<a href="#sample" onclick="viewPage('.$i.');">'.$i.'</a>';
+            if ($i <$nbrArray) echo ' - ';
+          }
 
-               </div>
-              </div><br/>
-
-              <div>
-                <a href="#sample" id="viewAW">VIEW ALL WORKS</a>
-              </div>
-            </div>
+         ?>
+         </div>
+        </div><br/>
+      </div>
     </section>
+
 
     <!-- Section icon_3 -->
     <div class="section-nul text-center position-relative">

@@ -15,6 +15,19 @@ $(document).ready(function(){
     });
 });
 
+function viewPage(page) {
+  var myView = document.getElementById('view');
+
+  $.ajax({
+      url: "views/viewArticles.php",
+      type: "GET",
+      data : 'p=' + page,
+      dataType:"html",
+      success: function(code_html) {
+          myView.innerHTML = code_html;
+      }
+  });
+}
 
 /* Display commentaries */
 function showCommentaries(type){
