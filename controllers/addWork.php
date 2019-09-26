@@ -5,7 +5,7 @@ if(isset($_SESSION['admin'])){
   require('../lib/database.lib.php');
   require('../models/work.php');
 
-  if (!empty($_POST['title']) && !empty($_POST['commentary']) && !empty($_POST['groupe']) && !empty($_POST['type']) && ($_FILES['img']['size'] > 0 || !empty($_POST['galery']))) {
+  if (!empty($_POST['title']) && !empty($_POST['commentary']) && ($_FILES['img']['size'] > 0 || !empty($_POST['galery']))) {
 
     if ($_FILES['img']['size'] > 0) {
       $file = $_FILES['img'];
@@ -21,8 +21,8 @@ if(isset($_SESSION['admin'])){
       $instArticle = [
           "id" => 0,
           "nom" => $_POST['title'],
-          "groupe" => $_POST['groupe'],
-          "type" => $_POST['type'],
+          "groupe" =>  $_SESSION['user'],
+          "type" => date("d-m-Y"),
           "likes" => 0,
           "image" => $url,
           "article" => $_POST['commentary']

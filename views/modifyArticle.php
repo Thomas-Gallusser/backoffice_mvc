@@ -1,5 +1,4 @@
 <?php ob_start();
-
 if(isset($_GET['id']) && is_numeric($_GET['id'])){
   $article = Work::withId($_GET['id']);
 ?>
@@ -15,13 +14,13 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
   </div>
   <hr class="my-3" />
   <div class="form-group">
-    <label for="exampleFormControlInput2" class="font-weight-bold">Groupe</label>
-    <input type="text" name="groupe" class="form-control" id="exampleFormControlInput2" placeholder="groupe*" required value="<?= $article->getGroupe(); ?>">
+    <label for="exampleFormControlInput2" class="font-weight-bold">Auteur</label>
+    <input type="text" name="groupe" class="form-control" id="exampleFormControlInput2" placeholder="groupe*"<?php if ($_SESSION['permission'] == '1') echo ' required '; else echo ' disabled '; ?>value="<?= $article->getGroupe(); ?>">
   </div>
   <hr class="my-3" />
   <div class="form-group">
-    <label for="exampleFormControlInput3" class="font-weight-bold">Type</label>
-    <input type="text" name="type" class="form-control" id="exampleFormControlInput3" placeholder="type*" required value="<?= $article->getType(); ?>">
+    <label for="exampleFormControlInput3" class="font-weight-bold">Date</label>
+    <input type="text" name="type" class="form-control" id="exampleFormControlInput3" placeholder="type*"<?php if ($_SESSION['permission'] == '1') echo ' required '; else echo ' disabled '; ?>value="<?= $article->getType(); ?>">
   </div>
   <hr class="my-3" />
   <div class="form-group">

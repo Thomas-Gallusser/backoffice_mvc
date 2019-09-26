@@ -12,13 +12,13 @@ if(isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['pwd']) && 
   require('../conf/settings.php');
   $conn = Database::getInstance();
   // Get login informations for the specific User
-  $row = $conn->prep_exec('SELECT id, password, permission
+  $row = $conn->prep_exec('SELECT id, login, password, permission
                           FROM users
                           WHERE login = "'.$login.'" ;');
 
   // Verification of password with db
   if($row['password'] == hash("sha256",$sel1.$_POST['pwd'].$sel2)){
-    $_SESSION['user'] = $row['id'];
+    $_SESSION['user'] = $row['login'];
     $_SESSION['admin'] = 1;
     $_SESSION['permission'] = $row['permission'];
     header("Location: ../index.php?backoffice=1");

@@ -9,8 +9,8 @@ $allArticles = Work::getAll();
   <thead>
     <tr>
       <th>Titre</th>
-      <th>Groupe</th>
-      <th>Type</th>
+      <th>Auteur</th>
+      <th>Date</th>
       <th>Likes</th>
       <th>Actions</th>
     </tr>
@@ -47,9 +47,11 @@ $allArticles = Work::getAll();
 <?php
 
   $nbrArray = Work::getCntArticle() / 10;
-  for ($i = 1; $i < $nbrArray+1; $i++) {
-    echo '<a href="index.php?backoffice=1&type=1&see=1&p='.$i.'">'.$i.'</a>';
-    if ($i <$nbrArray) echo ' - ';
+  if ($nbrArray > 1) {
+    for ($i = 1; $i < $nbrArray+1; $i++) {
+      echo '<a href="index.php?backoffice=1&type=1&see=1&p='.$i.'">'.$i.'</a>';
+      if ($i <$nbrArray) echo ' - ';
+    }
   }
 
   $content = ob_get_clean();

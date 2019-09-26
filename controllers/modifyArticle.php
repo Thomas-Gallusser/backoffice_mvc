@@ -5,9 +5,17 @@ if(isset($_SESSION['admin'])){
   require('../lib/database.lib.php');
   require('../models/work.php');
 
-  if (!empty($_POST['title']) && !empty($_POST['commentary']) && !empty($_POST['groupe']) && !empty($_POST['type'])) {
+  if (!empty($_POST['title']) && !empty($_POST['commentary'])) {
 
     $getArticle = Work::withId($_POST['id']);
+
+    if ($_SESSION['permission'] == 1) {
+      $grp = $_POST['groupe'];
+      $type = $_POST['type'];
+    } else {
+      $grp = $getArticle->getGroupe();
+      $type = $getArticle->getType();
+    }
 
     if (strpos($_FILES['img']["type"], 'image/') !== false) {
       $file = $_FILES['img'];
@@ -20,8 +28,8 @@ if(isset($_SESSION['admin'])){
     $instArticle = [
         "id" => $getArticle->getId(),
         "nom" => $_POST['title'],
-        "groupe" => $_POST['groupe'],
-        "type" => $_POST['type'],
+        "groupe" => $grp,
+        "type" => $type,
         "likes" => $getArticle->getLikes(),
         "image" => $url,
         "article" => $_POST['commentary']
