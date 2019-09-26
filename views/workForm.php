@@ -26,23 +26,23 @@
   <hr class="my-3" />
   <div class="row">
 
-    <input type="hidden" id="imgFromGalery" value="" />
+    <input name="galery" type="hidden" id="imgFromGalery" value="" />
     <!-- Image chosen -->
     <div class="col-4 text-center">
-      <img id="preview" src=""  />
+      <img id="preview" src="img/default.jpg"  />
     </div>
     <!-- Galery to chose-->
     <div class="col-4">
-      <div id="linkGalery" class="w-75 h-100" onClick="toggleGalery()">
+      <div id="linkGalery" class="w-75 text-center rounded" onClick="toggleGalery()">
         Choisir depuis la galerie
       </div>
     </div>
     <!-- Direct upload image -->
     <div class="col-4">
-      <div class="form-group">
-        <label for="exampleFormControlFile1" class="font-weight-bold">Upload direct</label>
-        <input type="file" name="img" class="form-control-file" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])">
-      </div>
+      <label class="fileContainer rounded text-center">
+        Upload direct
+        <input type="file" name="img" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])" />
+      </label>
     </div>
   </div>
   <hr class="my-3" />
@@ -54,15 +54,9 @@
 
 
 <?php
-unset($_SESSION['title']);
-unset($_SESSION['commentary']);
-unset($_SESSION['groupe']);
-unset($_SESSION['type']);
-$content = ob_get_clean(); ?>
 
+$content = ob_get_clean();
 
-
-<?php
 $tableImg = [];
 $handle = opendir('img/uploads/');
 while($file = readdir($handle)){

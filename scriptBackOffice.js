@@ -28,15 +28,17 @@ function toggleGalery(){
 // Select an image in the galery
 function selectImg(el){
   resetSelectImg();
-  $(el).parent().css('border','solid 1px red');
+  $(el).parent().css('box-shadow','0px 0px 5px 2px rgba(0,123,255,1)');
+  $(el).parent().append('<i id="checkIcon" class="fas fa-check-square fa-2x"></i>');
   $('#imgFromGalery').val($(el).attr('src'));
 }
 
 // Reset selection of an image in the galery
 function resetSelectImg(){
   var el = $('.cImg');
+  $('#checkIcon').remove();
   $(el).each(function() {
-    $(this).css('border','solid 1px white');
+    $(this).css('box-shadow','none');
   });
 }
 
@@ -49,9 +51,9 @@ $(document).ready(function() {
     }
 
     $('#paginGalery').append(pagination);
-  }
 
-  createImage(1);
+    createImage(1);
+  }
 });
 
 // Create page with table of images
