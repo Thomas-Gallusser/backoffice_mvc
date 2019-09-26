@@ -21,7 +21,6 @@ function getAdmin(){
 // backoffice
 function getBackOffice(){
   if(isset($_SESSION['admin'])){
-
     // Menu
     require('views/menuBackOffice.php');
 

@@ -10,7 +10,7 @@
 
       <div class="form-group">
         <label for="formGroupExampleInput">Login</label>
-        <input type="text" name="login" class="form-control" id="formGroupExampleInput" required>
+        <input type="text" name="login" class="form-control" id="formGroupExampleInput" required autofocus>
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">Mot de passe</label>
