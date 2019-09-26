@@ -354,8 +354,9 @@
 
 
                    <?php
-                     $article = Work::withId(1);
+                     $articles = Work::getLast(12);
 
+                     foreach($articles as $article){
                      echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 portfolio">
                             <div class="container-fluid hov">
 
@@ -386,6 +387,7 @@
 
                             </div>
                           </div>';
+                        }
 
                    ?>
 
@@ -568,7 +570,7 @@
                 <div class="button-commentary rotate180">►</div>
               </a>
               <div class="carousel-inner w-100" role="listbox">
-                  <div class="carousel-item active">
+                  <div class="carousel-item activec">
                       <div class="col-lg-2 bg-grey-color p-4 m-2">
                           <img class="img-fluid" src="img/logo_client_1.png">
                       </div>

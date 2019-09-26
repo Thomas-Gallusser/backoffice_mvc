@@ -1,7 +1,6 @@
 <?php ob_start();
 
 if(isset($_GET['id']) && is_numeric($_GET['id'])){
-$_SESSION['id'] = $_GET['id'];
   $article = Work::withId($_GET['id']);
 ?>
 

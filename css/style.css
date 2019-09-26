@@ -296,7 +296,7 @@ input::placeholder, textarea::placeholder{
     }
 }
 
-.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item.activec,
 .carousel-inner .carousel-item-next,
 .carousel-inner .carousel-item-prev {
     display: flex;
