@@ -12,6 +12,11 @@ function getPage(){
   require('views/base.php');
 }
 
+// article
+function getArticle(){
+  require('views/view.php');
+}
+
 // Admin
 function getAdmin(){
   if(!isset($_SESSION['admin']))

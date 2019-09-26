@@ -8,8 +8,8 @@ if(isset($_GET['admin']))
   getAdmin();
 elseif(isset($_GET['backoffice']))
   getBackOffice();
-elseif(isset($_GET['viewall']))
-  getAllArticles();
+elseif(isset($_GET['view']))
+  getArticle();
 else
   getPage();
 

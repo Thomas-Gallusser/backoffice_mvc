@@ -362,7 +362,7 @@
                          </div>
 
                          <div class="pos search">
-                           <a href="#sample">
+                           <a href="?view&id='.$article->getId().'">
                              <img src="img/backicon.png">
                              <div class="centered fas fa-search"></div>
                            </a>
@@ -382,7 +382,6 @@
                   </div>
                  </div>';
                }
-
            ?>
 
          </div>
