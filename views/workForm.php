@@ -25,17 +25,6 @@
   </div>
   <hr class="my-3" />
   <div class="row">
-    <!--
-    <div class="col-4">
-      <img id="preview" alt="Insérer une image" />
-    </div>
-    <div class="col-8">
-      <div class="form-group">
-        <label for="exampleFormControlFile1" class="font-weight-bold">Image</label>
-        <input type="file" name="img" class="form-control-file" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])">
-      </div>
-    </div>
-    -->
 
     <input type="hidden" id="imgFromGalery" value="" />
     <!-- Image chosen -->
@@ -62,7 +51,6 @@
     <button class="form-control btn-primary">Ajouter l'article</button>
   </div>
 </form>
-
 
 
 <?php

@@ -5,6 +5,11 @@ function getPage(){
   require('views/base.php');
 }
 
+// allArticles
+function getAllArticles(){
+  require('views/viewall.php');
+}
+
 // Admin
 function getAdmin(){
   if(!isset($_SESSION['admin']))
@@ -16,7 +21,6 @@ function getAdmin(){
 // backoffice
 function getBackOffice(){
   if(isset($_SESSION['admin'])){
-
     // Menu
     require('views/menuBackOffice.php');
 
