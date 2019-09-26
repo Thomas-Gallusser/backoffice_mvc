@@ -42,9 +42,9 @@
 
 
                    <?php
-                     $articles = Work::getAll();
+                       $partArticle = Work::getPart(10,($_GET['p'] - 1) * 10);
 
-                     foreach($articles as $article){
+                       foreach($partArticle as $article){
                      echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 portfolio">
                             <div class="container-fluid hov">
 
@@ -80,6 +80,17 @@
                    ?>
 
                </div>
+                <div>
+                  <?php
+
+                    $nbrArray = Work::getCntArticle() / 10;
+                    for ($i = 1; $i < $nbrArray+1; $i++) {
+                      echo '<a href="index.php?viewall&p='.$i.'">'.$i.'</a>';
+                      if ($i <$nbrArray) echo ' - ';
+                    }
+
+                  ?>
+                </div>
               </div>
             </div>
     </section>
