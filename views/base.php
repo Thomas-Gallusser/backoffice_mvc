@@ -568,7 +568,7 @@
                 <div class="button-commentary rotate180">►</div>
               </a>
               <div class="carousel-inner w-100" role="listbox">
-                  <div class="carousel-item active">
+                  <div class="carousel-item activec">
                       <div class="col-lg-2 bg-grey-color p-4 m-2">
                           <img class="img-fluid" src="img/logo_client_1.png">
                       </div>

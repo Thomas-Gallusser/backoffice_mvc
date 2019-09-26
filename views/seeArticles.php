@@ -52,8 +52,9 @@ $allArticles = Work::getAll();
 <?php
 
   $nbrArray = Work::getCntArticle() / 10;
-  for ($i = 1; $i < $nbrArray; $i++) {
-    echo '<a href="index.php?backoffice=1&type=1&see=1?p='.$i.'">'.$i.'</a>';
+  for ($i = 1; $i < $nbrArray+1; $i++) {
+    echo '<a href="index.php?backoffice=1&type=1&see=1&p='.$i.'">'.$i.'</a>';
+    if ($i <$nbrArray) echo ' - ';
   }
 
   $content = ob_get_clean();
