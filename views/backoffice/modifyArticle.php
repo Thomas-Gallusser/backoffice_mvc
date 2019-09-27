@@ -14,13 +14,13 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
   </div>
   <hr class="my-3" />
   <div class="form-group">
-    <label for="exampleFormControlInput2" class="font-weight-bold">Auteur</label>
-    <input type="text" name="groupe" class="form-control" id="exampleFormControlInput2" placeholder="groupe*"<?php if ($_SESSION['permission'] == '1') echo ' required '; else echo ' disabled '; ?>value="<?= $article->getGroupe(); ?>">
+    <label for="exampleFormControlInput2" class="font-weight-bold">Date</label>
+    <input type="text" name="groupe" class="form-control" id="exampleFormControlInput2" placeholder="groupe*"<?php if ($_SESSION['permission'] == '1') echo ' required '; else echo ' disabled '; ?>value="<?= $article->getPublication(); ?>">
   </div>
   <hr class="my-3" />
   <div class="form-group">
-    <label for="exampleFormControlInput3" class="font-weight-bold">Date</label>
-    <input type="text" name="type" class="form-control" id="exampleFormControlInput3" placeholder="type*"<?php if ($_SESSION['permission'] == '1') echo ' required '; else echo ' disabled '; ?>value="<?= $article->getType(); ?>">
+    <label for="exampleFormControlInput3" class="font-weight-bold">Auteur</label>
+    <input type="text" name="type" class="form-control" id="exampleFormControlInput3" placeholder="type*"<?php if ($_SESSION['permission'] == '1') echo ' required '; else echo ' disabled '; ?>value="<?= $article->getAuthor_id(); ?>">
   </div>
   <hr class="my-3" />
   <div class="form-group">

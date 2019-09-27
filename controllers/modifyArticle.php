@@ -10,11 +10,11 @@ if(isset($_SESSION['admin'])){
     $getArticle = Work::withId($_POST['id']);
 
     if ($_SESSION['permission'] == 1) {
-      $grp = $_POST['groupe'];
-      $type = $_POST['type'];
+      $publication = $_POST['groupe'];
+      $author_id= $_POST['type'];
     } else {
-      $grp = $getArticle->getGroupe();
-      $type = $getArticle->getType();
+      $publication = $getArticle->getPublication();
+      $author_id= $getArticle->getAuthor_id();
     }
 
     if (strpos($_FILES['img']["type"], 'image/') !== false) {
@@ -28,8 +28,8 @@ if(isset($_SESSION['admin'])){
     $instArticle = [
         "id" => $getArticle->getId(),
         "nom" => $_POST['title'],
-        "groupe" => $grp,
-        "type" => $type,
+        "publication" => $publication,
+        "author_id" => $author_id,
         "likes" => $getArticle->getLikes(),
         "image" => $url,
         "article" => $_POST['commentary']

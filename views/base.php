@@ -373,7 +373,7 @@
                        <div class="row infosPortf">
                          <div class="col-12">
                            <p class="bold">' . $article->getNom() . '</p>
-                           <p>' . $article->getGroupe() . ' / ' . $article->getType() . '</p>
+                           <p>' . $article->getPublication() . ' / ' . User::withId($article->getAuthor_id())->getLogin() . '</p>
                            <p>♥ ' . $article->getLikes() . '</p>
                          </div>
                        </div>
