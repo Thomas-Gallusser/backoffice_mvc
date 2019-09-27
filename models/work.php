@@ -116,7 +116,7 @@ class Work {
   //Récupère les $n derniers articles et les renvoie
   static function getLast($n) {
     $db = Database::getInstance();
-    $sql = 'SELECT * FROM works ORDER BY id DESC LIMIT '.$n.';';
+    $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id ORDER BY id DESC LIMIT '.$n.';';
     $works = array();
     foreach($db->fetch($sql) as $work) {
       array_push($works, Work::WithData($work));
@@ -127,7 +127,7 @@ class Work {
   //Récupère les $n derniers articles et les renvoie
   static function getPart($n,$o) {
     $db = Database::getInstance();
-    $sql = 'SELECT * FROM works ORDER BY id LIMIT '.$n.' OFFSET '.$o.';';
+    $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id ORDER BY id LIMIT '.$n.' OFFSET '.$o.';';
     $works = array();
     foreach($db->fetch($sql) as $work) {
       array_push($works, Work::WithData($work));
@@ -137,7 +137,7 @@ class Work {
     //Récupère les $n derniers articles et les renvoie
     static function getPartI($n,$o) {
       $db = Database::getInstance();
-      $sql = 'SELECT * FROM works ORDER BY id DESC LIMIT '.$n.' OFFSET '.$o.';';
+      $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id ORDER BY id DESC LIMIT '.$n.' OFFSET '.$o.';';
       $works = array();
       foreach($db->fetch($sql) as $work) {
         array_push($works, Work::WithData($work));
