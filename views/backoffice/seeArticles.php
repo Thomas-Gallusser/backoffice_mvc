@@ -1,6 +1,4 @@
 <?php ob_start();
-
-$allArticles = Work::getAll();
 ?>
 
 <div class="h5 py-4 text-center font-weight-bold">Liste de tous les articles</div>
