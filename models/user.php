@@ -10,6 +10,10 @@ class User {
 
   }
 
+  public function __toString() {
+    return $this->login;
+  }
+
   static function withData($array) {
     $instance = new self();
     $instance->fill($array);

@@ -4,14 +4,28 @@ if (!empty($_GET['id'])) {
   $getArticle = Work::withId($_GET['id']);
 
   if ($getArticle->getNom() != null) {
-    echo $getArticle->getNom() . '<br>';
-    echo $getArticle->getArticle() . '<br>';
-    echo $getArticle->getPublication() . '<br>';
-    echo User::withId($getArticle->getAuthor_id())->getLogin() . '<br>';
-    echo $getArticle->getLikes() . '<br>';
-    echo $getArticle->getImage();
-  } else {
-    echo 'L\'article n\'existe pas !';
+
+  $textes = explode('<br />',nl2br($getArticle->getArticle()));
+  ?>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-4">
+          <img class="pt-3" src="img/uploads/<?= $getArticle->getImage(); ?>" style="width:265;height:220px" />
+        </div>
+        <div class="col-8">
+          <p class="h1"><?= $getArticle->getNom(); ?></p>
+          <p class="articleAuthor pb-4">Par <?= ucfirst($getArticle->getNomAuthor()); ?>, le <?= $getArticle->getPublication(); ?></p>
+          <?php
+          for ($i=0, $v=count($textes); $i < $v ; $i++) {
+            echo '<p>'.$textes[$i].'</p>';
+          }
+          ?>
+        </div>
+      </div>
+    </div>
+  <?php
+} else {
+    echo '<p>L\'article n\'existe pas !</p>';
   }
 }
 

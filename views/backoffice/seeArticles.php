@@ -1,6 +1,4 @@
 <?php ob_start();
-
-$allArticles = Work::getAll();
 ?>
 
 <div class="h5 py-4 text-center font-weight-bold">Liste de tous les articles</div>
@@ -25,7 +23,7 @@ $allArticles = Work::getAll();
       <tr>
         <td><?= $article->getNom(); ?></td>
         <td><?= $article->getPublication(); ?></td>
-        <td><?= User::withId($article->getAuthor_id())->getLogin(); ?></td>
+        <td><?= $article->getNomAuthor(); ?></td>
         <td><?= $article->getLikes(); ?></td>
         <td>
           <a href="backoffice&type=1&edit&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>

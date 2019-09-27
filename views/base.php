@@ -373,7 +373,7 @@
                        <div class="row infosPortf">
                          <div class="col-12">
                            <p class="bold">' . $article->getNom() . '</p>
-                           <p>' . $article->getPublication() . ' / ' . User::withId($article->getAuthor_id())->getLogin() . '</p>
+                           <p>' . date("d/m/Y", strtotime($article->getPublication())) . ' / ' . ucfirst($article->getNomAuthor()) . '</p>
                            <p>♥ ' . $article->getLikes() . '</p>
                          </div>
                        </div>

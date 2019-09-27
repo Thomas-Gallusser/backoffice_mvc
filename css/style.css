@@ -13,6 +13,11 @@ html {
 body{
   font-family: 'Raleway', sans-serif;
 }
+
+.articleAuthor{
+  font-size:70%;
+  color: var(--light-grey-txt-color);
+}
 .copyfrom {
    position: absolute;
    left: -9999px;
