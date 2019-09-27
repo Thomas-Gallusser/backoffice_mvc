@@ -25,7 +25,7 @@ $allArticles = Work::getAll();
       <tr>
         <td><?= $article->getNom(); ?></td>
         <td><?= $article->getPublication(); ?></td>
-        <td><?= User::withId($article->getAuthor_id())->getLogin(); ?></td>
+        <td><?= $article->getNomAuthor(); ?></td>
         <td><?= $article->getLikes(); ?></td>
         <td>
           <a href="index.php?backoffice&type=1&edit=1&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
