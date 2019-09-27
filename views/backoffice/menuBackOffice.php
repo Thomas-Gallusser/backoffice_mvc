@@ -1,10 +1,10 @@
 <?php ob_start(); ?>
 
 <div class="sidenav">
-  <button class="dropdown-btn">Articles
+  <button class="dropdown-btn active">Articles
     <i class="fa fa-caret-down"></i>
   </button>
-  <div class="dropdown-container" style="display:none">
+  <div class="dropdown-container" style="display:block">
     <a href="index.php?backoffice&type=1&see=1&p=1">Voir tous les articles</a>
     <a href="index.php?backoffice&type=1&add=1">Ajouter un article</a>
   </div>
