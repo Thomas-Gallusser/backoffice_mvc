@@ -26,7 +26,7 @@
         <td><?= $article->getNomAuthor(); ?></td>
         <td><?= $article->getLikes(); ?></td>
         <td>
-          <a href="backoffice&type=1&edit&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
+          <a href="?backoffice&type=1&edit&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
           <?php
           if($_SESSION['permission'] == 1){
             ?>

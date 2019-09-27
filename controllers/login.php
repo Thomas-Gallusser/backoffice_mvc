@@ -21,7 +21,7 @@ if(!empty($_POST['login']) && !empty($_POST['pwd'])){
     $_SESSION['user'] = $getUser->getId();
     $_SESSION['admin'] = 1;
     $_SESSION['permission'] = $getUser->getPermission();
-    header("Location: ?backoffice");
+    header("Location: ../?backoffice");
     exit();
   } else {
     // var_dump($row);

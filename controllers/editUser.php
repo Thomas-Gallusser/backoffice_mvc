@@ -26,12 +26,12 @@ if(isset($_SESSION['admin'])){
       $editUser = User::withData($instUser);
       $editUser->edit();
 
-      header('Location: ../backoffice&type=1&user');
+      header('Location: ../?backoffice&type=1&user');
       exit();
     }
   }
 
-  header('Location: ../backoffice&type=1&useredit&id=' . $_POST['id']);
+  header('Location: ../?backoffice&type=1&useredit&id=' . $_POST['id']);
   exit();
 }
 else {

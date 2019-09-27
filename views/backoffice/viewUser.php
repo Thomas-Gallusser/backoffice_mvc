@@ -23,10 +23,10 @@
         <td><?= $user->getLogin(); ?></td>
         <td><?= $user->getPermission(); ?></td>
         <td>
-          <a href="backoffice&type=1&useredit&id=<?= $user->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
           <?php
           if($_SESSION['permission'] == 1){
             ?>
+          <a href="backoffice&type=1&useredit&id=<?= $user->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
             <a href="controllers/deleteUser.php?id=<?= $user->getId(); ?>&p=<?= $_GET['p']; ?>" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
             <?php
           }

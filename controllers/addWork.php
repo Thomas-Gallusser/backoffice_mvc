@@ -31,13 +31,13 @@ if(isset($_SESSION['admin'])){
       $newArticle = Work::withData($instArticle);
       $newArticle->create();
 
-      header('Location: ../backoffice&type=1&see&p=1');
+      header('Location: ../?backoffice&type=1&see&p=1');
       exit();
   }
 
-  header('Location: ../backoffice&type=1&add&atitle='. $_POST["title"] .'&agroupe='. $_POST["groupe"] .'&acommentary='. $_POST["commentary"] .'&atype='. $_POST["type"] .'');
+  header('Location: ../?backoffice&type=1&add&atitle='. $_POST["title"] .'&agroupe='. $_POST["groupe"] .'&acommentary='. $_POST["commentary"] .'&atype='. $_POST["type"] .'');
 }
 else {
-  header("Location: index.php?admin=1&error=1");
+  header("Location: ?admin=1&error=1");
 }
 ?>
