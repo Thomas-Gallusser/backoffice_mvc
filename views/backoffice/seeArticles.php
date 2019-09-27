@@ -51,10 +51,15 @@
 
   $nbrArray = Work::getCntArticle() / 10;
   if ($nbrArray > 1) {
+    echo '<br><nav aria-label="...">
+            <ul class="pagination justify-content-center">';
+
     for ($i = 1; $i < $nbrArray+1; $i++) {
-      echo '<a href="index.php?backoffice&type=1&see&p='.$i.'">'.$i.'</a>';
-      if ($i <$nbrArray) echo ' - ';
+      echo '<li class="page-item'.(($i==$_GET['p'])? ' active':'').'"><a href="index.php?backoffice&type=1&see&p='.$i.'" class="page-link">'.$i.'</a></li>';
     }
+
+    echo '</ul>
+        </nav>';
   }
 
   $content = ob_get_clean();

@@ -90,7 +90,6 @@ class Work {
   public function create() {
     $db = Database::getInstance();
     $sql = 'INSERT INTO works (nom, author_id, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->author_id.'", '.$this->likes.', "'.$this->image.'","'.$this->article.'");';
-    echo $sql;
     $db->exec($sql);
   }
 
@@ -98,7 +97,6 @@ class Work {
   public function edit() {
     $db = Database::getInstance();
     $sql = 'UPDATE works SET nom="'.$this->nom.'",author_id='.$this->author_id.',likes='.$this->likes.',image="'.$this->image.'",article="'.$this->article.'" WHERE id='.$this->id.';';
-    echo $sql;
     $db->exec($sql);
   }
 

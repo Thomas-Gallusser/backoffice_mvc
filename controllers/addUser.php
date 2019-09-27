@@ -18,7 +18,7 @@
       $getAdd = User::withData($instUser);
       $getAdd->create();
 
-      header('Location: ../?backoffice&success');
+      header('Location: ../?backoffice&type=1&user&success');
       exit();
     }
   }
