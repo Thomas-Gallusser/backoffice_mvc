@@ -28,7 +28,7 @@ $allArticles = Work::getAll();
         <td><?= $article->getType(); ?></td>
         <td><?= $article->getLikes(); ?></td>
         <td>
-          <a href="index.php?>backoffice&type=1&edit=1&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
+          <a href="index.php?backoffice&type=1&edit=1&id=<?= $article->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
           <?php
           if($_SESSION['permission'] == 1){
             ?>

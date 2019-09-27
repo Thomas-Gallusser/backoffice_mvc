@@ -44,8 +44,7 @@ class User {
       if ($result = $db->fetch($sql)) {
         $this->fill($result[0]);
       }
-    }
-    if (isset($this->id)) {
+    } else if (isset($this->id)) {
       $db = Database::getInstance();
       $sql = 'SELECT * FROM users WHERE id="'.$this->id.'"';
       if ($result = $db->fetch($sql)) {
