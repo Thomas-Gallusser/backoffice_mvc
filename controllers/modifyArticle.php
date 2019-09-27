@@ -38,11 +38,11 @@ if(isset($_SESSION['admin'])){
     $newArticle = Work::withData($instArticle);
     $newArticle->edit();
 
-    header('Location: ../index.php?backoffice=1&type=1&see=1&p=1');
+    header('Location: ../backoffice&type=1&see=1&p=1');
     exit();
   }
 
-  header('Location: ../index.php?backoffice=1&type=1&edit=1&id=' . $_POST['id']);
+  header('Location: ../backoffice&type=1&edit=1&id=' . $_POST['id']);
   exit();
 }
 else {
