@@ -1,5 +1,8 @@
-<?php ob_start(); ?>
+<?php ob_start();
 
+if(isset($_GET['error']))
+  echo '<div class="alert alert-danger py-2 my-4 text-center font-weight-bold">Informations incorrects !</div>';
+?>
 <div class="h5 py-4 text-center font-weight-bold">Créer un utilisateur</div>
 
 <form action="controllers/addUser.php" method="POST" class="workForm" enctype="multipart/form-data">

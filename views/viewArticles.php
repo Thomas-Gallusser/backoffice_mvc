@@ -2,6 +2,7 @@
  require('../conf/settings.php');
  require('../lib/database.lib.php');
  require('../models/work.php');
+ require('../models/user.php');
 
   $articles = Work::getPartI(12,($_GET['p'] - 1) * 12);
 

@@ -19,8 +19,8 @@ if(isset($_SESSION['admin'])){
 
     if (strpos($_FILES['img']["type"], 'image/') !== false) {
       $file = $_FILES['img'];
-      $url = $file = $_FILE['img']['name'];
-      move_uploaded_file($file["tmp_name"]);
+      $url = uniqid('i_') . '.' . pathinfo($file["name"],PATHINFO_EXTENSION);
+      move_uploaded_file($file["tmp_name"], '../img/uploads/'.$url);
     } else {
       $url = $getArticle->getImage();
     }
@@ -38,14 +38,14 @@ if(isset($_SESSION['admin'])){
     $newArticle = Work::withData($instArticle);
     $newArticle->edit();
 
-    header('Location: ../index.php?backoffice=1&type=1&see=1&p=1');
+    header('Location: ../?backoffice&type=1&modif&see&p=1');
     exit();
   }
 
-  header('Location: ../index.php?backoffice=1&type=1&edit=1&id=' . $_POST['id']);
+  header('Location: ../?backoffice&type=1&error&edit&id=' . $_POST['id']);
   exit();
 }
 else {
-  header("Location: index.php?admin=1&error=1");
+  header("Location: index.php?admin&error");
 }
 ?>

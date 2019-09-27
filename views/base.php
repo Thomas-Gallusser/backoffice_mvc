@@ -390,10 +390,17 @@
 
           $nbrArray = Work::getCntArticle() / 12;
           if ($nbrArray > 1) {
+            echo '<br><nav aria-label="...">
+                    <ul class="pagination justify-content-center">';
+
             for ($i = 1; $i < $nbrArray+1; $i++) {
-              echo '<a href="#sample" onclick="viewPage('.$i.');">'.$i.'</a>';
-              if ($i <$nbrArray) echo ' - ';
+
+              echo '<li class="page-item'.(($i==1)? ' active':'').'"><a class="page-link" href="#sample" onclick="viewPage('.$i.');">'.$i.'</a></li>';
+
             }
+
+            echo '</ul>
+                </nav>';
           }
 
          ?>

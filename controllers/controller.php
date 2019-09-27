@@ -22,7 +22,7 @@ function getAdmin(){
   if(!isset($_SESSION['admin']))
     require('views/backoffice/admin.php');
   else
-    header("Location: index.php?backoffice");
+    header("Location: ?backoffice");
 }
 
 // backoffice
@@ -59,6 +59,6 @@ function getBackOffice(){
     require('views/backoffice/backoffice.php');
   }
   else {
-    header("Location: index.php?admin=1&error=1");
+    header("Location: ?admin=1&error=1");
   }
 }
