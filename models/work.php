@@ -105,7 +105,7 @@ class Work {
   //récupère tous les articles et les renvoie dans un tableau
   static function getAll(){
     $db = Database::getInstance();
-    $sql = 'SELECT * FROM works';
+    $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id';
     $works = array();
     foreach ($db->fetch($sql) as $work) {
       array_push($works, Work::withData($work));
