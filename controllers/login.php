@@ -18,7 +18,7 @@ if(!empty($_POST['login']) && !empty($_POST['pwd'])){
   $getUser = User::withLogin($login);
   // Verification of password with db
   if($getUser->getPassword() == hash("sha256",$sel1.$_POST['pwd'].$sel2)){
-    $_SESSION['user'] = $getUser->getLogin();
+    $_SESSION['user'] = $getUser->getId();
     $_SESSION['admin'] = 1;
     $_SESSION['permission'] = $getUser->getPermission();
     header("Location: ../index.php?backoffice");
