@@ -14,7 +14,7 @@ if (!empty($_GET['id'])) {
         </div>
         <div class="col-8">
           <p class="h1"><?= $getArticle->getNom(); ?></p>
-          <p class="articleAuthor pb-4">Par <?= ucfirst($getArticle->getNomAuthor()); ?>, le <?= $getArticle->getPublication(); ?></p>
+          <p class="articleAuthor pb-4">Par <?= ucfirst($getArticle->getNomAuthor()); ?>, le <?= date("d/m/Y à H:i", strtotime($getArticle->getPublication())); ?></p>
           <?php
           for ($i=0, $v=count($textes); $i < $v ; $i++) {
             echo '<p>'.$textes[$i].'</p>';

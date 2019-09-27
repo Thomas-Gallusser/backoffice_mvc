@@ -10,16 +10,6 @@ if(isset($_GET['error']))
     <label for="exampleFormControlInput1" class="font-weight-bold">Titre de l'article</label>
     <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="titre*" required <?php if(!empty($_GET['atitle'])) echo 'value="'. $_GET['atitle'].'"'; ?>>
   </div>
-  <!-- <hr class="my-3" /> -->
-  <!-- <div class="form-group">
-    <label for="exampleFormControlInput2" class="font-weight-bold">Groupe</label>
-    <input type="text" name="groupe" class="form-control" id="exampleFormControlInput2" placeholder="groupe*" required <?php //if(!empty($_GET['agroupe'])) echo 'value="'. $_GET['agroupe'].'"'; ?>>
-  </div>
-  <hr class="my-3" />
-  <div class="form-group">
-    <label for="exampleFormControlInput3" class="font-weight-bold">Type</label>
-    <input type="text" name="type" class="form-control" id="exampleFormControlInput3" placeholder="type*" required <?php //if(!empty($_GET['atype'])) echo 'value="'. $_GET['atype'].'"'; ?>>
-  </div> -->
   <hr class="my-3">
   <div class="form-group">
     <label for="exampleFormControlTextarea1" class="font-weight-bold">Texte</label>
