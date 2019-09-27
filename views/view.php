@@ -7,14 +7,14 @@ if (!empty($_GET['id'])) {
 
   $textes = explode('<br />',nl2br($getArticle->getArticle()));
   ?>
-    <div class="container py-4">
+    <div class="container py-5">
       <div class="row">
         <div class="col-4">
-          <img src="img/uploads/<?= $getArticle->getImage(); ?>" style="width:265;height:220px" />
+          <img class="pt-3" src="img/uploads/<?= $getArticle->getImage(); ?>" style="width:265;height:220px" />
         </div>
         <div class="col-8">
           <p class="h1"><?= $getArticle->getNom(); ?></p>
-          <p class="articleAuthor pb-4">Par nomAuteur, le 01/01/2001 à 01:01</p>
+          <p class="articleAuthor pb-4">Par <?= ucfirst($getArticle->getNomAuthor()); ?>, le <?= $getArticle->getPublication(); ?></p>
           <?php
           for ($i=0, $v=count($textes); $i < $v ; $i++) {
             echo '<p>'.$textes[$i].'</p>';

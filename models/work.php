@@ -9,6 +9,7 @@ class Work {
   private $likes;
   private $image;
   private $article;
+  private $nomAuthor;
 
 
   //Constructueur
@@ -39,12 +40,13 @@ class Work {
     $this->likes    = $array['likes'];
     $this->image    = $array['image'];
     $this->article  = $array['article'];
+    $this->nomAuthor  = $array['login'];
   }
 
   public function load() {
     if (isset($this->id)) {
       $db = Database::getInstance();
-      $sql = 'SELECT * FROM works WHERE id="'.$this->id.'"';
+      $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id WHERE works.id="'.$this->id.'"';
       if ($result = $db->fetch($sql)) {
         $this->fill($result[0]);
       }
@@ -78,6 +80,10 @@ class Work {
 
   public function getImage() {
     return $this->image;
+  }
+
+  public function getNomAuthor() {
+    return $this->nomAuthor;
   }
 
   //Création d'une entité dans la base de données
