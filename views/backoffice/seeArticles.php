@@ -1,4 +1,9 @@
 <?php ob_start();
+
+  if(isset($_GET['success']))
+  echo '<div class="alert alert-success py-2 my-4 text-center font-weight-bold">Article ajoutée !</div>';
+  if(isset($_GET['modif']))
+    echo '<div class="alert alert-success py-2 my-4 text-center font-weight-bold">Modifications enregistrées !</div>';
 ?>
 
 <div class="h5 py-4 text-center font-weight-bold">Liste de tous les articles</div>

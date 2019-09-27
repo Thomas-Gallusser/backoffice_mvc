@@ -7,9 +7,9 @@ if(isset($_SESSION['admin'])){
 
   $delArticle = User::withId($_GET['id']);
   $delArticle->delete();
-  header('Location: ../?backoffice&type=1&user&p='.$_GET['p']);
+  header('Location: ../?backoffice&type=1&error&user&p='.$_GET['p']);
 }
 else {
-  header("Location: ?admin=1&error=1");
+  header("Location: ?admin&error");
 }
 ?>

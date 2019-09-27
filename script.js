@@ -21,8 +21,12 @@ function acceptCookie(){
   document.getElementById('cookieBar').style.display = "none";
 }
 
+var precPage = 1;
 function viewPage(page) {
   var myView = document.getElementById('view');
+  
+  document.getElementsByClassName("page-item")[precPage-1].className = "page-item";
+  document.getElementsByClassName("page-item")[page-1].className = "page-item active";
 
   $.ajax({
       url: "views/viewArticles.php",
@@ -31,6 +35,7 @@ function viewPage(page) {
       dataType:"html",
       success: function(code_html) {
           myView.innerHTML = code_html;
+          precPage = page;
       }
   });
 }

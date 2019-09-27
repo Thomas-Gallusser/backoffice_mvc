@@ -1,8 +1,10 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+if(isset($_GET['error']))
+  echo '<div class="alert alert-danger py-2 my-4 text-center font-weight-bold">Informations incorrects !</div>';
+?>
 
 <div class="h5 py-4 text-center font-weight-bold">Ajouter un article</div>
-
-<?php if (!empty($_GET['atitle']) || !empty($_GET['acommentary']) || !empty($_GET['agroupe']) || !empty($_GET['atype'])) echo '<p class="text-danger">[ERREUR]: Un champ ou l\'image est manquant(e).</p>'; ?>
 <form action="controllers/addWork.php" method="POST" class="workForm" enctype="multipart/form-data">
   <div class="form-group">
     <label for="exampleFormControlInput1" class="font-weight-bold">Titre de l'article</label>

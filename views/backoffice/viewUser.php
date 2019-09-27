@@ -1,4 +1,10 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+  if(isset($_GET['success']))
+    echo '<div class="alert alert-success py-2 my-4 text-center font-weight-bold">Utilisateur ajouté !</div>';
+  if(isset($_GET['modif']))
+    echo '<div class="alert alert-success py-2 my-4 text-center font-weight-bold">Modifications enregistrées !</div>';
+?>
 
 <div class="h5 py-4 text-center font-weight-bold">Liste de tous les articles</div>
 
@@ -26,7 +32,7 @@
           <?php
           if($_SESSION['permission'] == 1){
             ?>
-          <a href="backoffice&type=1&useredit&id=<?= $user->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
+          <a href="?backoffice&type=1&useredit&id=<?= $user->getId(); ?>"><i class="fas fa-edit" title="Modifier"></i></a>
             <a href="controllers/deleteUser.php?id=<?= $user->getId(); ?>&p=<?= $_GET['p']; ?>" class="ml-2"><i class="fas fa-trash" title="Supprimer"></i></a>
             <?php
           }

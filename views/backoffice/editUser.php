@@ -1,6 +1,9 @@
 <?php ob_start();
 if(isset($_GET['id']) && is_numeric($_GET['id'])){
   $user = User::withId($_GET['id']);
+
+  if(isset($_GET['error']))
+    echo '<div class="alert alert-danger py-2 my-4 text-center font-weight-bold">Informations incorrects !</div>';
 ?>
 
 <div class="h5 py-4 text-center font-weight-bold">Modifier l'article</div>

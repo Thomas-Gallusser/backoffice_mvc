@@ -18,11 +18,11 @@
       $getAdd = User::withData($instUser);
       $getAdd->create();
 
-      header('Location: ../?backoffice');
+      header('Location: ../?backoffice&success');
       exit();
     }
   }
 
-  header('Location: ../?backoffice&type=1&new');
+  header('Location: ../?backoffice&type=1&error&new');
   exit();
 ?>
