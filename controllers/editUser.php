@@ -7,18 +7,19 @@ if(isset($_SESSION['admin'])){
 
   if (!empty($_POST['id']) && !empty($_POST['login']) && !empty($_POST['perm'])) {
 
-    $instUser = User::withId($_POST['id']);
+    $myUser = User::withId($_POST['id']);
 
     if ($_SESSION['permission'] == 1) {
-      $login = $_POST['id'];
-      $psd = $_POST['psw'];
+
+      $login = $_POST['login'];
+      $psd = hash("sha256","*1m+".$_POST['psd']."i59);");
       $perm = $_POST['perm'];
-      if (empty($_POST['psw'])) $psd = $instUser->getPassword();
+      if (strlen($_POST['psd']) == 0) $psd = $myUser->getPassword();
 
       $instUser = [
-          "id" => $getArticle->getId(),
+          "id" => $myUser->getId(),
           "login" => $login,
-          "password" => $psw,
+          "password" => $psd,
           "permission" => $perm,
       ];
 

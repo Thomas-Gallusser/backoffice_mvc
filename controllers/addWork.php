@@ -21,8 +21,8 @@ if(isset($_SESSION['admin'])){
       $instArticle = [
           "id" => 0,
           "nom" => $_POST['title'],
-          "groupe" =>  $_SESSION['user'],
-          "type" => date("d-m-Y"),
+          "publication" =>  0,
+          "author_id" => $_SESSION['user'],
           "likes" => 0,
           "image" => $url,
           "article" => $_POST['commentary']
@@ -31,11 +31,11 @@ if(isset($_SESSION['admin'])){
       $newArticle = Work::withData($instArticle);
       $newArticle->create();
 
-      header('Location: ../index.php?backoffice=1&type=1&see=1&p=1');
+      header('Location: ../index.php?backoffice&type=1&see&p=1');
       exit();
   }
 
-  header('Location: ../index.php?backoffice=1&type=1&add=1&atitle='. $_POST["title"] .'&agroupe='. $_POST["groupe"] .'&acommentary='. $_POST["commentary"] .'&atype='. $_POST["type"] .'');
+  header('Location: ../index.php?backoffice&type=1&add&atitle='. $_POST["title"] .'&agroupe='. $_POST["groupe"] .'&acommentary='. $_POST["commentary"] .'&atype='. $_POST["type"] .'');
 }
 else {
   header("Location: index.php?admin=1&error=1");

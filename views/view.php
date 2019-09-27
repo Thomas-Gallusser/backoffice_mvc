@@ -24,7 +24,7 @@ if (!empty($_GET['id'])) {
       </div>
     </div>
   <?php
-  } else {
+} else {
     echo '<p>L\'article n\'existe pas !</p>';
   }
 }

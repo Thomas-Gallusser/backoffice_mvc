@@ -4,8 +4,8 @@ class Work {
   //Déclaration des variables d'après la bcadd
   private $id;
   private $nom;
-  private $groupe;
-  private $type;
+  private $publication;
+  private $author_id;
   private $likes;
   private $image;
   private $article;
@@ -13,7 +13,7 @@ class Work {
 
   //Constructueur
   //*Instanciation d'un object existant avec new Work (id)
-  //*Création d'un nouvel objet avec new Work (nom, groupe, type, likes, image, article)
+  //*Création d'un nouvel objet avec new Work (nom, publication, author_id, likes, image, article)
   public function __construct() {
 
   }
@@ -34,8 +34,8 @@ class Work {
   public function fill( $array ) {
     $this->id       = $array['id'];
     $this->nom      = $array['nom'];
-    $this->groupe   = $array['groupe'];
-    $this->type     = $array['type'];
+    $this->publication   = $array['publication'];
+    $this->author_id     = $array['author_id'];
     $this->likes    = $array['likes'];
     $this->image    = $array['image'];
     $this->article  = $array['article'];
@@ -64,12 +64,12 @@ class Work {
     return $this->article;
   }
 
-  public function getGroupe() {
-    return $this->groupe;
+  public function getPublication() {
+    return $this->publication;
   }
 
-  public function getType() {
-    return $this->type;
+  public function getAuthor_id() {
+    return $this->author_id;
   }
 
   public function getLikes() {
@@ -83,14 +83,16 @@ class Work {
   //Création d'une entité dans la base de données
   public function create() {
     $db = Database::getInstance();
-    $sql = 'INSERT INTO works (nom, groupe, type, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->groupe.'", "'.$this->type.'", '.$this->likes.', "'.$this->image.'","'.$this->article.'");';
+    $sql = 'INSERT INTO works (nom, author_id, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->author_id.'", '.$this->likes.', "'.$this->image.'","'.$this->article.'");';
+    echo $sql;
     $db->exec($sql);
   }
 
   //Modification d'une entité dans la base de données
   public function edit() {
     $db = Database::getInstance();
-    $sql = 'UPDATE works SET nom="'.$this->nom.'",groupe="'.$this->groupe.'",type="'.$this->type.'",likes='.$this->likes.',image="'.$this->image.'",article="'.$this->article.'" WHERE id='.$this->id.';';
+    $sql = 'UPDATE works SET nom="'.$this->nom.'",author_id='.$this->author_id.',likes='.$this->likes.',image="'.$this->image.'",article="'.$this->article.'" WHERE id='.$this->id.';';
+    echo $sql;
     $db->exec($sql);
   }
 
