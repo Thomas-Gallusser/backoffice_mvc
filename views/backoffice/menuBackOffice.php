@@ -9,7 +9,13 @@
     <a href="index.php?backoffice&type=1&add=1">Ajouter un article</a>
   </div>
 
-    <a href="index.php?backoffice&type=1&new">Créer un utilisateur</a>
+  <button class="dropdown-btn">Gestion d'utilisateurs
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container" style="display:none">
+      <a href="index.php?backoffice&type=1&new">Créer un utilisateur</a>
+      <a href="index.php?backoffice&type=1&user">Liste des utilisateurs</a>
+  </div>
 
   <a class="disconnect" href="controllers/disconnect.php">Déconnexion</a>
 </div>

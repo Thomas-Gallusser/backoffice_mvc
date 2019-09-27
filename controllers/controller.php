@@ -49,6 +49,10 @@ function getBackOffice(){
           require('views/backoffice/modifyArticle.php');
         elseif(isset($_GET['new']))
           require('views/backoffice/addUser.php');
+        elseif(isset($_GET['user']))
+          require('views/backoffice/viewUser.php');
+        elseif(isset($_GET['useredit']))
+          require('views/backoffice/editUser.php');
       }
     }
 
