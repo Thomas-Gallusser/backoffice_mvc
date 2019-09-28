@@ -26,7 +26,7 @@ function toggleGalery(){
   }
 
   if ($('#contentGalery').width() > 0) {
-    maxImg = parseInt($('#contentGalery').width() / 130)*2;
+    maxImg = parseInt($('#contentGalery').width() / 134)*2;
     $('#paginGalery').empty();
     var pagination = "";
     if(typeof(nbImg) != "undefined"){
@@ -45,7 +45,7 @@ function toggleGalery(){
 
 window.onresize = function() {
   if ($('#contentGalery').width() > 0) {
-    maxImg = parseInt($('#contentGalery').width() / 130)*2;
+    maxImg = parseInt($('#contentGalery').width() / 134)*2;
     $('#paginGalery').empty();
     var pagination = "";
     if(typeof(nbImg) != "undefined"){

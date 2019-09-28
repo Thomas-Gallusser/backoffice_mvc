@@ -1,5 +1,7 @@
 <?php session_start();
 
+if (file_exists('index.php')) header('Location: install.php');
+
 require('controllers/controller.php');
 
 require('views/header.php');

@@ -46,7 +46,7 @@ class Work {
   public function load() {
     if (isset($this->id)) {
       $db = Database::getInstance();
-      $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id WHERE works.id="'.$this->id.'"';
+      $sql = 'SELECT st_works.*, st_users.login FROM st_works LEFT JOIN st_users ON st_users.id = st_works.author_id WHERE st_works.id="'.$this->id.'"';
       if ($result = $db->fetch($sql)) {
         $this->fill($result[0]);
       }
@@ -89,21 +89,21 @@ class Work {
   //Création d'une entité dans la base de données
   public function create() {
     $db = Database::getInstance();
-    $sql = 'INSERT INTO works (nom, author_id, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->author_id.'", '.$this->likes.', "'.$this->image.'","'.$this->article.'");';
+    $sql = 'INSERT INTO st_works (nom, author_id, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->author_id.'", '.$this->likes.', "'.$this->image.'","'.$this->article.'");';
     $db->exec($sql);
   }
 
   //Modification d'une entité dans la base de données
   public function edit() {
     $db = Database::getInstance();
-    $sql = 'UPDATE works SET nom="'.$this->nom.'",author_id='.$this->author_id.',likes='.$this->likes.',image="'.$this->image.'",article="'.$this->article.'" WHERE id='.$this->id.';';
+    $sql = 'UPDATE st_works SET nom="'.$this->nom.'",author_id='.$this->author_id.',likes='.$this->likes.',image="'.$this->image.'",article="'.$this->article.'" WHERE id='.$this->id.';';
     $db->exec($sql);
   }
 
   //récupère tous les articles et les renvoie dans un tableau
   static function getAll(){
     $db = Database::getInstance();
-    $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id';
+    $sql = 'SELECT st_works.*, st_users.login FROM st_works LEFT JOIN st_users ON st_users.id = st_works.author_id';
     $works = array();
     foreach ($db->fetch($sql) as $work) {
       array_push($works, Work::withData($work));
@@ -114,7 +114,7 @@ class Work {
   //Récupère les $n derniers articles et les renvoie
   static function getLast($n) {
     $db = Database::getInstance();
-    $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id ORDER BY id DESC LIMIT '.$n.';';
+    $sql = 'SELECT st_works.*, st_users.login FROM st_works LEFT JOIN st_users ON st_users.id = st_works.author_id ORDER BY id DESC LIMIT '.$n.';';
     $works = array();
     foreach($db->fetch($sql) as $work) {
       array_push($works, Work::WithData($work));
@@ -125,7 +125,7 @@ class Work {
   //Récupère les $n derniers articles et les renvoie
   static function getPart($n,$o) {
     $db = Database::getInstance();
-    $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id ORDER BY id LIMIT '.$n.' OFFSET '.$o.';';
+    $sql = 'SELECT st_works.*, st_users.login FROM st_works LEFT JOIN st_users ON st_users.id = st_works.author_id ORDER BY id LIMIT '.$n.' OFFSET '.$o.';';
     $works = array();
     foreach($db->fetch($sql) as $work) {
       array_push($works, Work::WithData($work));
@@ -135,7 +135,7 @@ class Work {
     //Récupère les $n derniers articles et les renvoie
     static function getPartI($n,$o) {
       $db = Database::getInstance();
-      $sql = 'SELECT works.*, users.login FROM works LEFT JOIN users ON users.id = works.author_id ORDER BY id DESC LIMIT '.$n.' OFFSET '.$o.';';
+      $sql = 'SELECT st_works.*, st_users.login FROM st_works LEFT JOIN st_users ON st_users.id = st_works.author_id ORDER BY id DESC LIMIT '.$n.' OFFSET '.$o.';';
       $works = array();
       foreach($db->fetch($sql) as $work) {
         array_push($works, Work::WithData($work));
@@ -146,7 +146,7 @@ class Work {
   //récupère tous les articles et les renvoie dans un tableau
   static function getCntArticle(){
     $db = Database::getInstance();
-    $sql = 'SELECT * FROM works';
+    $sql = 'SELECT * FROM st_works';
     $works = $db->fetch($sql);
     return count($works);
   }
@@ -154,7 +154,7 @@ class Work {
   public function delete() {
     if ($this->id) {
       $db = Database::getInstance();
-      $sql = 'DELETE FROM works WHERE id = "'.$this->id.'"';
+      $sql = 'DELETE FROM st_works WHERE id = "'.$this->id.'"';
       return $db->exec($sql);
     }
   }
