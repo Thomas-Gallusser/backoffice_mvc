@@ -1,8 +1,8 @@
 <?php session_start();
 
-if (!empy($_SESSION['install'])) {
+if (!empty($_SESSION['install'])) {
   unlink(install.php);
-  unset($_SESSION['install'])
+  unset($_SESSION['install']);
 }
 if (file_exists('index.php')) header('Location: install.php');
 
