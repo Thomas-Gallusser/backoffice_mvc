@@ -16,12 +16,49 @@ for (i = 0; i < dropdown.length; i++) {
 
 
 // GALERIE
+var maxImg = 1;
 // Display/hide galery
 function toggleGalery(){
   $( "#galeryBg" ).toggle();
 
-  if($("#imgFromGalery").attr('src') != ""){
+  if($("#imgFromGalery").attr('src') != undefined){
     $('#preview').attr("src",$('#imgFromGalery').val());
+  }
+
+  if ($('#contentGalery').width() > 0) {
+    maxImg = parseInt($('#contentGalery').width() / 130)*2;
+    $('#paginGalery').empty();
+    var pagination = "";
+    if(typeof(nbImg) != "undefined"){
+      if (nbImg > maxImg) {
+        for(var i=1, v=Math.ceil(nbImg/maxImg) ; i<=v ; i++){
+          pagination += '<li class="page-item '+((i==1)?'active':'') +'"><a class="page-link" onClick="switchPageGalery('+i+')">'+i+'</a></li>';
+        }
+      }
+
+      $('#paginGalery').append(pagination);
+
+      createImage(1);
+    }
+  }
+}
+
+window.onresize = function() {
+  if ($('#contentGalery').width() > 0) {
+    maxImg = parseInt($('#contentGalery').width() / 130)*2;
+    $('#paginGalery').empty();
+    var pagination = "";
+    if(typeof(nbImg) != "undefined"){
+      if (nbImg > maxImg) {
+        for(var i=1, v=Math.ceil(nbImg/maxImg) ; i<=v ; i++){
+          pagination += '<li class="page-item '+((i==1)?'active':'') +'"><a class="page-link" onClick="switchPageGalery('+i+')">'+i+'</a></li>';
+        }
+      }
+
+      $('#paginGalery').append(pagination);
+
+      createImage(1);
+    }
   }
 }
 
@@ -42,24 +79,11 @@ function resetSelectImg(){
   });
 }
 
-// Create base Galery
-$(document).ready(function() {
-  var pagination = "";
-  if(typeof(nbImg) != "undefined"){
-    for(var i=1, v=Math.ceil(nbImg/14) ; i<=v ; i++){
-      pagination += '<li class="page-item '+((i==1)?'active':'') +'"><a class="page-link" onClick="switchPageGalery('+i+')">'+i+'</a></li>';
-    }
-
-    $('#paginGalery').append(pagination);
-
-    createImage(1);
-  }
-});
-
 // Create page with table of images
 function createImage(page){
+  $('#contentGalery').empty();
   var images = "";
-  for(var i=((page-1)*14), v=i+13 ; i<=v ; i++){
+  for(var i=((page-1)*maxImg), v=i+maxImg-1 ; i<=v ; i++){
     if(i < nbImg)
       images += '<div class="text-center cImg"><img src="img/uploads/'+tableImg[i]+'" onClick="selectImg(this)" /></div>';
     else
@@ -72,12 +96,11 @@ function createImage(page){
 // Switch page
 function switchPageGalery(page){
   var nbDisplayed = $('.cImg').length;
-
-  if((page * 14) > nbDisplayed && nbImg > nbDisplayed){
+  if((page * maxImg) > nbDisplayed && nbImg > nbDisplayed){
     createImage(page);
   }
 
-  displayElements(page);
+  // displayElements(page);
 
   var pagination = $('#paginGalery li');
   for(var i=0, v=pagination.length ; i<=v ; i++){
@@ -89,17 +112,15 @@ function switchPageGalery(page){
 }
 
 // Display elements
-function displayElements(page){
-  var img = $('.cImg');
-  var firstElement =((page - 1) * 14);
-  var lastElement = firstElement + 13;
-
-  console.log(firstElement+' - '+lastElement);
-
-  for(var i=0, v=img.length ; i<=v ; i++){
-    if(i >= firstElement && i<= lastElement)
-      $(img[i]).css('display','inline-block');
-    else
-      $(img[i]).css('display','none');
-  }
-}
+// function displayElements(page){
+//   var img = $('.cImg');
+//   var firstElement =((page - 1) * maxImg);
+//   var lastElement = firstElement + maxImg-1;
+//
+//   for(var i=0, v=img.length ; i<=v ; i++){
+//     if(i >= firstElement && i<= lastElement)
+//       $(img[i]).css('display','inline-block');
+//     else
+//       $(img[i]).css('display','none');
+//   }
+// }

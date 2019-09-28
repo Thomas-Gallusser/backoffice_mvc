@@ -23,6 +23,8 @@
     // On récupère les articles, on récupère la page actuel on retire 1 et multiplie par 10 pour récupérer la bonne fourchette d'articles
     $partArticle = Work::getPart(10,($_GET['p'] - 1) * 10);
 
+    if (count($partArticle) == 0) header('Location: ?backoffice&type=1&user&p=' . ($_GET['p'] -1));
+
     foreach($partArticle as $article){
       ?>
       <tr>
