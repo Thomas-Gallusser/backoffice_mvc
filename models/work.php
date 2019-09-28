@@ -89,7 +89,7 @@ class Work {
   //Création d'une entité dans la base de données
   public function create() {
     $db = Database::getInstance();
-    $sql = 'INSERT INTO st_works (nom, author_id, likes, image, article) VALUES ("'.$this->nom.'", "'.$this->author_id.'", '.$this->likes.', "'.$this->image.'","'.$this->article.'");';
+    $sql = 'INSERT INTO st_works (nom, author_id, likes, image, article) VALUES ("'.$this->nom.'", '.$this->author_id.', '.$this->likes.', "'.$this->image.'","'.$this->article.'");';
     $db->exec($sql);
   }
 
