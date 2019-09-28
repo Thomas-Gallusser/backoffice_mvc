@@ -18,6 +18,10 @@
 
       $conn->exec('INSERT INTO st_users (login, password, permission) VALUES ("'.$_POST["login"].'","'.hash("sha256","*1m+".$_POST["password"]."i59);").'",1);');
 
+      $_SESSION['install'] = 1;
+      header('Location: /');
+      exit();
+
     }catch(PDOException $e){
       echo $e->getMessage();
       if ($e->getCode() == 2002) $error=2; // Host inexistant
