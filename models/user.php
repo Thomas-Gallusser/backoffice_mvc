@@ -44,13 +44,13 @@ class User {
   public function load() {
     if (isset($this->login)) {
       $db = Database::getInstance();
-      $sql = 'SELECT * INTO st_users WHERE login="'.$this->login.'"';
+      $sql = 'SELECT * FROM st_users WHERE login="'.$this->login.'"';
       if ($result = $db->fetch($sql)) {
         $this->fill($result[0]);
       }
     } else if (isset($this->id)) {
       $db = Database::getInstance();
-      $sql = 'SELECT * INTO st_users WHERE id="'.$this->id.'"';
+      $sql = 'SELECT * FROM st_users WHERE id="'.$this->id.'"';
       if ($result = $db->fetch($sql)) {
         $this->fill($result[0]);
       }
@@ -67,7 +67,7 @@ class User {
 
   static function getAll(){
     $db = Database::getInstance();
-    $sql = 'SELECT * st_users';
+    $sql = 'SELECT * FROM st_users';
     $users = array();
     foreach ($db->fetch($sql) as $users) {
       array_push($users, User::withData($users));
@@ -77,7 +77,7 @@ class User {
 
   static function getPart($n,$o) {
     $db = Database::getInstance();
-    $sql = 'SELECT * st_users ORDER BY id LIMIT '.$n.' OFFSET '.$o.';';
+    $sql = 'SELECT * FROM st_users ORDER BY id LIMIT '.$n.' OFFSET '.$o.';';
     $users = array();
     foreach($db->fetch($sql) as $user) {
       array_push($users, User::WithData($user));
@@ -87,7 +87,7 @@ class User {
 
   static function getCntArticle(){
   $db = Database::getInstance();
-  $sql = 'SELECT * st_users';
+  $sql = 'SELECT * FROM st_users';
   $users = $db->fetch($sql);
   return count($users);
   }
@@ -95,7 +95,8 @@ class User {
   public function delete() {
     if ($this->id) {
       $db = Database::getInstance();
-      $sql = 'DELETE st_users WHERE id = "'.$this->id.'"';
+      $sql = 'DELETE FROM st_users WHERE id = "'.$this->id.'"';
+      echo $sql;
       return $db->exec($sql);
     }
   }
