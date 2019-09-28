@@ -346,6 +346,7 @@
         <div class="container-fluid">
          <div class="row" id="view">
            <?php
+           
             $articles = Work::getPartI(12,($_GET['p'] - 1) * 12);
 
             foreach($articles as $article){

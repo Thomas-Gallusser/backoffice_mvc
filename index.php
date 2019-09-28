@@ -1,14 +1,13 @@
 <?php session_start();
 
+require('controllers/controller.php');
+require('views/header.php');
+
 if (!empty($_SESSION['install'])) {
   unlink(install.php);
   unset($_SESSION['install']);
-}
-if (file_exists('index.php')) header('Location: install.php');
+} else if (file_exists('index.php')) header('Location: install.php');
 
-require('controllers/controller.php');
-
-require('views/header.php');
 
 if(isset($_GET['admin']))
   getAdmin();
