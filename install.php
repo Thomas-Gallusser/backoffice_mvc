@@ -16,7 +16,7 @@
       $conn->exec('CREATE TABLE IF NOT EXISTS `st_users` (`id` smallint(5) NOT NULL AUTO_INCREMENT,`login` varchar(20) NOT NULL, `password` varchar(64) NOT NULL, `permission` tinyint(1) NOT NULL, PRIMARY KEY (`id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;');
 
       $conn->exec('DROP TABLE IF EXISTS `st_works`;');
-      $conn->exec('CREATE TABLE IF NOT EXISTS `st_works` (`id` smallint(5) NOT NULL AUTO_INCREMENT,`nom` varchar(40) NOT NULL,`author_id` smallint(5) NOT NULL,`publication` DATETIME NOT NULL,`likes` smallint(5) NOT NULL,`image` varchar(40) NOT NULL,`article` text NOT NULL,PRIMARY KEY (`id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;');
+      $conn->exec('CREATE TABLE IF NOT EXISTS `st_works` (`id` smallint(5) NOT NULL AUTO_INCREMENT,`nom` varchar(40) NOT NULL,`author_id` smallint(5) NOT NULL,`publication` DATETIME  NOT NULL DEFAULT CURRENT_TIMESTAMP,`likes` smallint(5) NOT NULL,`image` varchar(40) NOT NULL,`article` text NOT NULL,PRIMARY KEY (`id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;');
 
       $conn->exec('INSERT INTO st_users (login, password, permission) VALUES ("'.$_POST["login"].'","'.hash("sha256","*1m+".$_POST["password"]."i59);").'",1);');
 
