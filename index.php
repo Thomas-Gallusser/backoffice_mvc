@@ -4,7 +4,7 @@ require('controllers/controller.php');
 require('views/header.php');
 
 if (!empty($_SESSION['install'])) {
-  unlink(install.php);
+  unlink('install.php');
   unset($_SESSION['install']);
 } else if (file_exists('index.php')) header('Location: install.php');
 
