@@ -25,6 +25,6 @@ if(!empty($_POST['login']) && !empty($_POST['pwd'])){
     exit();
   } else {
     // var_dump($row);
-    header("Location: ../admin&error");
+    header("Location: ../?admin&error");
   }
 }
