@@ -1,6 +1,9 @@
 <?php ob_start(); ?>
 
 <div class="sidenav">
+  <div class="container bg-white" style="display:block">
+    <a href="./" class="text-dark">← Retourner sur le site</a>
+  </div>
   <button class="dropdown-btn active">Articles
     <i class="fa fa-caret-down"></i>
   </button>
