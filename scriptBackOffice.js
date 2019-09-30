@@ -18,10 +18,11 @@ for (i = 0; i < dropdown.length; i++) {
 // GALERIE
 var maxImg = 1;
 // Display/hide galery
+//$('#preview')[0].src = './' + $('#imgFromGalery')[0].value;
 function toggleGalery(){
   $( "#galeryBg" ).toggle();
 
-  if($("#imgFromGalery").attr('src') != undefined){
+  if($('#imgFromGalery')[0].value != ""){
     $('#preview').attr("src",$('#imgFromGalery').val());
   }
 
