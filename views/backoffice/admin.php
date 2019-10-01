@@ -20,5 +20,6 @@
         <button class="form-control btn-primary">Connexion</button>
       </div>
     </form>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
   </div>
 </div>

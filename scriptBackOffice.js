@@ -112,6 +112,18 @@ function switchPageGalery(page){
   }
 }
 
+function onSignIn(googleUser) {
+  $.ajax({
+  type: 'POST',
+  url: 'views/backoffice/logingoogle.php',
+  dataeType: 'text',
+  data: 'id=' + googleUser.getAuthResponse().id_token,
+  success: function(result) {
+    console.log(result);
+   }
+ });
+}
+
 // Display elements
 // function displayElements(page){
 //   var img = $('.cImg');
